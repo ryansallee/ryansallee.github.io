@@ -1,0 +1,89 @@
+/* Base Styles */
+
+
+/* .content {
+    background: #7cfc00;
+} */
+
+<! This background color will be used but the colors need to be stylized !>
+/* Nav Bar */
+
+.name {
+    font-size: 2em;
+}
+
+.name,
+.main-nav li {
+    text-align: center;
+}
+
+.main-nav li {
+    background: rgb(33, 128, 33);
+    border: white .5px solid;
+}
+
+.name a,
+.main-nav a {
+    padding: 0 15px;
+    /*margin-top: -20px;
+    margin-bottom: -20px;*/
+    <! Unsure if I will go with the margins to collapse in the nav bar !>text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+.main-nav a {
+    color: white;
+}
+
+
+/*---Layout---*/
+
+.main-header {
+    background: linear-gradient(0deg, rgb(167, 221, 243), rgb(76, 191, 236));
+}
+
+@media (min-width: 789px) {
+    .main-header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    .wrap {
+        min-height: 100vh;
+    }
+    .name {
+        float: left;
+    }
+    .main-nav {
+        float: right;
+    }
+    .main-nav li {
+        float: left;
+    }
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .container {
+        position: relative;
+    }
+    h1 {
+        margin: 0;
+    }
+    ul {
+        position: absolute;
+        bottom: 12.5%;
+        /* Unsure if I want to keep this with 1.25 em font in main-nav li with centered position */
+        right: 0;
+    }
+    .main-nav li {
+        margin: 0 5px;
+        background: rgb(33, 128, 33);
+        border: white 1px solid;
+        border-radius: 0 25px 0 25px;
+        padding: 0 25px;
+        font-size: 1.25em;
+    }
+}

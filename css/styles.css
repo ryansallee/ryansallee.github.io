@@ -5,6 +5,14 @@
     background: #7cfc00;
 } */
 
+
+/* Fonts */
+
+h1,
+h3 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
 <! This background color will be used but the colors need to be stylized !>
 /* Nav Bar */
 
@@ -20,20 +28,29 @@
 .main-nav li {
     background: rgb(33, 128, 33);
     border: white .5px solid;
+    border-radius: 0 25px 0 25px;
 }
 
 .name a,
 .main-nav a {
-    padding: 0 15px;
-    /*margin-top: -20px;
-    margin-bottom: -20px;*/
+    padding: 0 25px;
+    /* Padding to 55 px? It does look attractive */
     <! Unsure if I will go with the margins to collapse in the nav bar !>text-align: center;
     display: block;
     text-decoration: none;
+    <! We also probably need to move this into the media query. As well,
+    I need to create a friendly mobile navigation.!>
 }
 
 .main-nav a {
     color: white;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: lightslategray;
 }
 
 
@@ -43,23 +60,39 @@
     background: linear-gradient(0deg, rgb(167, 221, 243), rgb(76, 191, 236));
 }
 
+
+/* Media Queries */
+
 @media (min-width: 789px) {
+    /*Nav Bar */
     .main-header {
         position: fixed;
         width: 100%;
         top: 0;
+        z-index: 1;
     }
     .wrap {
-        min-height: 100vh;
+        min-height: calc(100vh-65px);
     }
     .name {
         float: left;
+        margin: 0;
+        font-size: 2.5em;
+        padding: 10px 0;
     }
     .main-nav {
         float: right;
+        padding: 20px 0;
+        height: 25px;
     }
     .main-nav li {
         float: left;
+        margin: 0 15px;
+        background: rgb(33, 128, 33);
+        border: white .25px solid;
+        border-radius: 100px 0px;
+        /*padding: 0px 25px;*/
+        font-size: 1.25em;
     }
     .clearfix::after {
         content: "";
@@ -69,21 +102,20 @@
     .container {
         position: relative;
     }
-    h1 {
-        margin: 0;
-    }
     ul {
         position: absolute;
-        bottom: 12.5%;
+        /* bottom: 10%; */
         /* Unsure if I want to keep this with 1.25 em font in main-nav li with centered position */
-        right: 0;
+        right: 0%;
+        /*height: 30px;*/
     }
-    .main-nav li {
-        margin: 0 5px;
-        background: rgb(33, 128, 33);
-        border: white 1px solid;
-        border-radius: 0 25px 0 25px;
-        padding: 0 25px;
-        font-size: 1.25em;
+    /* Content Styles */
+    .slideshow {
+        padding-top: 65px;
+    }
+    /*Footer Styles*/
+    .foot-name {
+        text-align: center;
+        margin: 1em auto 0 auto;
     }
 }

@@ -47,11 +47,34 @@ h3 {
 }
 
 
+/*Generated Nav Bar Content */
+
+.home::before {
+    content: url(../img/home.svg);
+    margin-right: 2px;
+}
+
+.AboutUs::before {
+    content: url(../img/about_us.svg);
+    margin-right: 2px;
+    display: inline-block;
+}
+
+.leaf::before {
+    content: url(../img/leaf.svg);
+    margin-right: 2px;
+    display: inline-block;
+}
+
+
 /* Footer */
 
 .footer {
     background-color: lightslategray;
 }
+
+
+/* Generated Footer Content */
 
 
 /*---Layout---*/

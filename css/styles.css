@@ -13,16 +13,16 @@ h3 {
     font-family: 'Fjalla One', sans-serif;
 }
 
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
 <! This background color will be used but the colors need to be stylized !>
 /* Nav Bar */
 
-.name {
+.name a {
     font-size: 2em;
-}
-
-.name,
-.main-nav li {
-    text-align: center;
 }
 
 .main-nav li {
@@ -33,11 +33,8 @@ h3 {
 
 .name a,
 .main-nav a {
-    padding: 0 25px;
-    /* Padding to 55 px? It does look attractive */
-    <! Unsure if I will go with the margins to collapse in the nav bar !>text-align: center;
-    display: block;
     text-decoration: none;
+    text-align: center;
     <! We also probably need to move this into the media query. As well,
     I need to create a friendly mobile navigation.!>
 }
@@ -66,21 +63,45 @@ h3 {
     display: inline-block;
 }
 
+.contactUs::before {
+    content: url(../img/contact_us.svg);
+    margin-right: 2px;
+    display: inline-block;
+}
+
 
 /* Footer */
 
 .footer {
-    background-color: lightslategray;
+    background-color: lightgrey;
 }
 
 
 /* Generated Footer Content */
 
+a[href^="mailto"]::before {
+    content: url(../img/email.svg);
+    margin-right: 2px;
+    display: inline-block;
+}
+
+.telephone::before {
+    content: url(../img/phone.svg);
+    margin-right: 2px;
+    display: inline-block;
+}
+
+.footer a[href="index.html"]::before {
+    content: url(../img/foot_home.svg);
+    margin-right: 2px;
+    display: inline-block;
+}
+
 
 /*---Layout---*/
 
-.main-header {
-    background: linear-gradient(0deg, rgb(167, 221, 243), rgb(76, 191, 236));
+header {
+    background: linear-gradient(0deg, white, rgb(76, 191, 236));
 }
 
 
@@ -88,53 +109,34 @@ h3 {
 
 @media (min-width: 789px) {
     /*Nav Bar */
-    .main-header {
+    header {
         position: fixed;
-        width: 100%;
         top: 0;
+        width: 100%;
+    }
+    .main-header {
         z-index: 1;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
     }
-    .wrap {
-        min-height: calc(100vh-65px);
-    }
-    .name {
-        float: left;
-        margin: 0;
-        font-size: 2.5em;
-        padding: 10px 0;
-    }
+    .main-header,
     .main-nav {
-        float: right;
-        padding: 20px 0;
-        height: 25px;
+        display: flex;
     }
     .main-nav li {
-        float: left;
-        margin: 0 15px;
-        background: rgb(33, 128, 33);
         border: white .25px solid;
         border-radius: 100px 0px;
-        /*padding: 0px 25px;*/
+        margin: auto 2px;
         font-size: 1.25em;
     }
-    .clearfix::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    .container {
-        position: relative;
-    }
-    ul {
-        position: absolute;
-        /* bottom: 10%; */
-        /* Unsure if I want to keep this with 1.25 em font in main-nav li with centered position */
-        right: 0%;
-        /*height: 30px;*/
+    .main-nav a {
+        padding: 0 15px;
     }
     /* Content Styles */
     .slideshow {
-        padding-top: 65px;
+        margin-top: 40px;
     }
     /*Footer Styles*/
     .foot-name {

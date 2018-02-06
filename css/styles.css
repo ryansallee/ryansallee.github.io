@@ -1,9 +1,16 @@
 /* Base Styles */
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(180deg, white, rgb(33, 128, 33));
+}
 
-/* .content {
-    background: #7cfc00;
-} */
+.slideshow,
+.main-content {
+    flex: 1;
+}
 
 
 /* Fonts */
@@ -27,20 +34,19 @@ h1 {
 
 .main-nav li {
     background: rgb(33, 128, 33);
-    border: white .5px solid;
-    border-radius: 0 25px 0 25px;
+    text-align: center;
+    margin: 0 10% 2PX 10%;
+    border-radius: 25px;
+    display: block;
 }
 
-.name a,
-.main-nav a {
+.main-header a {
     text-decoration: none;
-    text-align: center;
-    <! We also probably need to move this into the media query. As well,
-    I need to create a friendly mobile navigation.!>
 }
 
 .main-nav a {
     color: white;
+    display: block;
 }
 
 
@@ -48,24 +54,24 @@ h1 {
 
 .home::before {
     content: url(../img/home.svg);
-    margin-right: 2px;
+    margin-right: 5px;
 }
 
 .AboutUs::before {
     content: url(../img/about_us.svg);
-    margin-right: 2px;
+    margin-right: 5px;
     display: inline-block;
 }
 
 .leaf::before {
     content: url(../img/leaf.svg);
-    margin-right: 2px;
+    margin-right: 5px;
     display: inline-block;
 }
 
 .contactUs::before {
     content: url(../img/contact_us.svg);
-    margin-right: 2px;
+    margin-right: 5px;
     display: inline-block;
 }
 
@@ -74,6 +80,10 @@ h1 {
 
 .footer {
     background-color: lightgrey;
+}
+
+.foot-name {
+    text-align: center;
 }
 
 
@@ -107,13 +117,46 @@ header {
 
 /* Media Queries */
 
-@media (min-width: 789px) {
-    /*Nav Bar */
+
+/*-----Tablet------*/
+
+@media (min-width: 489px) {
     header {
         position: fixed;
         top: 0;
         width: 100%;
     }
+    h1 {
+        margin-bottom: 2px;
+    }
+    .main-header,
+    .main-nav {
+        display: flex;
+    }
+    .main-header {
+        z-index: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .main-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 2px;
+    }
+    .main-nav li {
+        flex-grow: 1;
+        border-radius: 100px 100px;
+        border: white .25px solid;
+        margin: 0 10px;
+    }
+    /* Content Styles  */
+}
+
+@media (min-width: 1024px) {
+    /*Nav Bar */
     .main-header {
         z-index: 1;
         flex-direction: row;
@@ -121,26 +164,19 @@ header {
         width: 90%;
         margin: 0 auto;
     }
-    .main-header,
-    .main-nav {
-        display: flex;
-    }
     .main-nav li {
-        border: white .25px solid;
-        border-radius: 100px 0px;
-        margin: auto 2px;
+        border-radius: 25px 100px 5px 100px;
+        margin: auto 10px;
         font-size: 1.25em;
     }
     .main-nav a {
         padding: 0 15px;
     }
-    /* Content Styles */
-    .slideshow {
-        margin-top: 40px;
+    .main-nav {
+        margin-bottom: 0px;
     }
     /*Footer Styles*/
     .foot-name {
-        text-align: center;
-        margin: 1em auto 0 auto;
+        margin: 0 auto 0 auto;
     }
 }

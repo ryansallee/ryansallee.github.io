@@ -4,13 +4,21 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(180deg, white, rgb(33, 128, 33));
+    background: linear-gradient(0deg, white, rgb(33, 128, 33));
 }
 
 .slideshow,
 .main-content {
     flex: 1;
 }
+
+
+/*.slideshow {
+    display: none;
+}*/
+
+
+/* This class will likely be implemented  in javascript where we are on mobile */
 
 
 /* Fonts */
@@ -35,9 +43,10 @@ h1 {
 .main-nav li {
     background: rgb(33, 128, 33);
     text-align: center;
-    margin: 0 10% 2PX 10%;
+    margin: 0 20% 2PX 20%;
     border-radius: 25px;
     display: block;
+    font-size: 1.25em
 }
 
 .main-header a {
@@ -54,42 +63,59 @@ h1 {
 
 .home::before {
     content: url(../img/home.svg);
-    margin-right: 5px;
+    margin-right: 4px;
 }
 
 .AboutUs::before {
     content: url(../img/about_us.svg);
-    margin-right: 5px;
+    margin-right: 4px;
     display: inline-block;
 }
 
 .leaf::before {
     content: url(../img/leaf.svg);
-    margin-right: 5px;
+    margin-right: 4px;
     display: inline-block;
 }
 
 .contactUs::before {
     content: url(../img/contact_us.svg);
-    margin-right: 5px;
+    margin-right: 4px;
     display: inline-block;
 }
 
 
 /* Footer */
 
+.footer,
+.foot-name {
+    display: flex;
+}
+
 .footer {
-    background-color: lightgrey;
+    background-color: rgb(175, 174, 174);
+    text-align: center;
+    flex-direction: column;
 }
 
 .foot-name {
-    text-align: center;
+    margin: 5px auto 10px auto;
+    border-bottom: 1px solid black;
+    flex-direction: row;
+}
+
+.foot-links {
+    margin: auto 0;
+}
+
+.ryan {
+    font-size: .5em;
 }
 
 
 /* Generated Footer Content */
 
-a[href^="mailto"]::before {
+a[href^="mailto:l"]::before {
     content: url(../img/email.svg);
     margin-right: 2px;
     display: inline-block;
@@ -114,13 +140,28 @@ header {
     background: linear-gradient(0deg, white, rgb(76, 191, 236));
 }
 
+.main-content {
+    background: white;
+    width: 97.5%;
+    margin: 3.75% auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgb(113, 119, 119);
+}
+
+.intro-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
 
 /* Media Queries */
 
 
 /*-----Tablet------*/
 
-@media (min-width: 489px) {
+@media (min-width: 640px) {
+    /* The three following inside this media query with the flex rule above set up the tablet display where the title
+    of the site displays on top with a navigation bar below so that the header is not crowded on intermediate size screens.*/
     header {
         position: fixed;
         top: 0;
@@ -142,7 +183,7 @@ header {
     }
     .main-nav {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
         margin-bottom: 2px;
     }
@@ -150,9 +191,16 @@ header {
         flex-grow: 1;
         border-radius: 100px 100px;
         border: white .25px solid;
-        margin: 0 10px;
+        margin: 0 18px;
     }
     /* Content Styles  */
+    .main-content {
+        width: 95%;
+        margin: 2.5% auto;
+    }
+    .intro-container {
+        width: 92.5%;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -167,7 +215,6 @@ header {
     .main-nav li {
         border-radius: 25px 100px 5px 100px;
         margin: auto 10px;
-        font-size: 1.25em;
     }
     .main-nav a {
         padding: 0 15px;
@@ -175,8 +222,31 @@ header {
     .main-nav {
         margin-bottom: 0px;
     }
-    /*Footer Styles*/
-    .foot-name {
-        margin: 0 auto 0 auto;
+    /* To give some depth and draw attention to the list items in the .main-nav class, I added a simple animation on a subtle box-shadow whenever
+    a visitor hovers over the list items in the main nav. */
+    @keyframes main-nav {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 2px 2px 2px black;
+        }
+        100% {
+            box-shadow: none;
+        }
     }
+    .main-nav li:hover {
+        animation-name: main-nav;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    /* Content Styles */
+    .main-content {
+        width: 90%;
+        margin: 2.5% auto;
+    }
+    .intro-container {
+        width: 87.5%;
+    }
+    /*Footer Styles*/
 }

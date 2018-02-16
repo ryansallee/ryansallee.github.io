@@ -1,0 +1,24 @@
+.slideshow {}
+
+img[src^='img/L'] {
+    width: 97.5%;
+    border-radius: 25px;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (min-width: 640px) {
+    .slideshow {
+        margin: 67.5px auto 0 auto;
+        position: relative;
+        z-index: -1;
+    }
+    img[src^='img/L'] {
+        width: 95%;
+        margin: 0 auto;
+        border-radius: 25px;
+    }
+    .slides {
+        display: none;
+    }
+}

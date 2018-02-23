@@ -7,18 +7,10 @@ body {
     background: linear-gradient(0deg, white, rgb(33, 128, 33));
 }
 
-.slideshow,
+#spring-alert,
 .main-content {
     flex: 1;
 }
-
-
-/*.slideshow {
-    display: none;
-}*/
-
-
-/* This class will likely be implemented  in javascript where we are on mobile */
 
 
 /* Fonts */
@@ -33,11 +25,11 @@ h1 {
     text-align: center;
 }
 
-<! This background color will be used but the colors need to be stylized !>
+
 /* Nav Bar */
 
 .name a {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .main-nav li {
@@ -82,6 +74,15 @@ h1 {
     content: url(../img/contact_us.svg);
     margin-right: 4px;
     display: inline-block;
+}
+
+
+/* Message */
+
+#spring-alert {
+    margin-top: 100px;
+    /* background: lightgray; */
+    border-radius: 100px;
 }
 
 
@@ -175,7 +176,7 @@ header {
         display: flex;
     }
     .main-header {
-        z-index: 1;
+        z-index: 100;
         flex-direction: column;
         justify-content: space-between;
         width: 95%;
@@ -196,7 +197,7 @@ header {
     /* Content Styles  */
     .main-content {
         width: 95%;
-        margin: 2.5% auto;
+        margin: 12.5px auto;
     }
     .intro-container {
         width: 92.5%;
@@ -207,7 +208,6 @@ header {
 @media (min-width: 1024px) {
     /*Nav Bar */
     .main-header {
-        z-index: 1;
         flex-direction: row;
         justify-content: space-between;
         width: 90%;
@@ -244,7 +244,7 @@ header {
     /* Content Styles */
     .main-content {
         width: 90%;
-        margin: 2.5% auto;
+        margin: 15px auto;
     }
     .intro-container {
         width: 87.5%;

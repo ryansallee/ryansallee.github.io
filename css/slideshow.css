@@ -12,11 +12,13 @@ img[src^='img/L'] {
         margin: 67.5px auto 0 auto;
         position: relative;
         z-index: -1;
+        background:
     }
     img[src^='img/L'] {
-        width: 95%;
+        width: 75%;
         margin: 0 auto;
         border-radius: 25px;
+        height: auto;
     }
     .slides {
         display: none;

@@ -44,9 +44,4 @@ window.onload = function() {
 
 };
 
-// beforeSpring;
-
-// if (beforeSpringDate < todayDate < beginSummerDate) {
-//     div.innerHTML = beginSummerMessage;
-//     div.style.background = "rgb(239, 52, 34)";
-// }
+// End of Script

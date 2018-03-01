@@ -12,23 +12,32 @@ body {
     flex: 1;
 }
 
+
+/* Font Styling */
+
+h1,
+h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-style: italic;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
 a,
 a:visited {
     color: inherit;
     text-decoration: none;
 }
 
-
-/* Fonts */
-
-h1,
-h3 {
-    font-family: 'Fjalla One', sans-serif;
+a {
+    font-style: italic;
 }
 
-h1 {
-    margin: 0;
-    text-align: center;
+.main-nav a {
+    font-style: normal;
 }
 
 
@@ -66,24 +75,30 @@ header {
 
 .home::before {
     content: url(../img/home.svg);
-    margin-right: 4px;
+    margin-right: 3px;
 }
 
 .AboutUs::before {
     content: url(../img/about_us.svg);
-    margin-right: 4px;
+    margin-right: 3px;
     display: inline-block;
 }
 
 .leaf::before {
     content: url(../img/leaf.svg);
-    margin-right: 4px;
+    margin-right: 3px;
+    display: inline-block;
+}
+
+.shovel::before {
+    content: url(../img/tool.svg);
+    margin-right: 3px;
     display: inline-block;
 }
 
 .contactUs::before {
     content: url(../img/contact_us.svg);
-    margin-right: 4px;
+    margin-right: 3px;
     display: inline-block;
 }
 
@@ -197,7 +212,7 @@ a[href^="mailto:l"]::before {
         flex-grow: 1;
         border-radius: 100px 100px;
         border: white .25px solid;
-        margin: 0 18px;
+        margin: 0 10px;
     }
     /* Alert Styles */
     #alert {
@@ -219,7 +234,7 @@ a[href^="mailto:l"]::before {
     .main-header {
         flex-direction: row;
         justify-content: space-between;
-        width: 90%;
+        width: 92.5%;
         margin: 0 auto;
     }
     .main-nav li {
@@ -256,10 +271,10 @@ a[href^="mailto:l"]::before {
     }
     /* Content Styles */
     .main-content {
-        width: 90%;
+        width: 92.5%;
         margin: 15px auto;
     }
     .intro-container {
-        width: 87.5%;
+        width: 90%;
     }
 }

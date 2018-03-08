@@ -22,17 +22,20 @@ legend {
 
 input {
     margin-bottom: 5px;
+    border-radius: 5px;
 }
 
 .inputs,
 .checks {
     margin: 0 auto;
     width: 55%;
+    padding: 5px 0;
 }
 
 input:focus,
 textarea:focus {
     background-color: rgba(255, 255, 0, 0.308);
+    border: 2px solid rgb(33, 128, 33);
 }
 
 .comments {
@@ -46,6 +49,7 @@ textarea:focus {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    border-radius: 5px;
 }
 
 .buttons {
@@ -60,4 +64,20 @@ textarea:focus {
     display: inline-block;
     color: white;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
+}
+
+
+/* Media Queries */
+
+
+/* Tablets */
+
+@media (min-width: 640px) {
+    .contactForm {
+        width: 95%;
+        margin-top: 97.5px;
+    }
+    .inputs {
+        width: 35%;
+    }
 }

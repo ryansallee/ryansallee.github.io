@@ -19,7 +19,7 @@ var beginSummerDate = new Date(2018, 05, 21);
 beginSummerDate = beginSummerDate.getTime();
 
 // Function to display Dates
-
+// Starts immediately with window.onload
 window.onload = function() {
     // Set Up Variables to Display Messages
     var beforeSpringMessage = "<p><strong>Spring is coming! <a href='#telephone'> Call us</a> now to get your Lawn Paynes solved!<strong></p>";

@@ -38,6 +38,14 @@ textarea:focus {
     border: 2px solid rgb(33, 128, 33);
 }
 
+fieldset {
+    border-radius: 5px;
+}
+
+.checks input {
+    margin-left: 5px;
+}
+
 .comments {
     width: 85%;
     margin: 0 auto;

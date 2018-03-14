@@ -156,6 +156,7 @@ a[href^="mailto:l"]::before {
         position: fixed;
         top: 0;
         width: 100%;
+        z-index: 100;
     }
     h1 {
         margin-bottom: 2px;
@@ -165,7 +166,6 @@ a[href^="mailto:l"]::before {
         display: flex;
     }
     .main-header {
-        z-index: 100;
         flex-direction: column;
         justify-content: space-between;
         width: 95%;

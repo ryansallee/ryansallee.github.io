@@ -1,5 +1,10 @@
 /* Base Styles */
 
+
+/* The z-index for the form is needed so that when we use our AJAX script
+for the form submission to our test CORS-enabled server that the fade out does not 
+overlap the main header */
+
 .contactForm {
     flex: 1;
     width: 97.5%;
@@ -7,6 +12,8 @@
     margin: 10px auto;
     border-radius: 25px;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
+    position: relative;
+    z-index: 0;
 }
 
 form {

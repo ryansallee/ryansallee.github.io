@@ -51,10 +51,9 @@ $email.focusout(function() {
 
     if (!emailFormat.test($email.val()) || $email.val() == "") {
         $(".alertEmail").show().html("A valid email address is required!").css(error);
-        console.log('done');
         $submitDisable();
     } else {
-        console.log('awesome');
+
         $('.alertEmail').hide();
         $submitEnable();
     }
@@ -84,16 +83,32 @@ $phone.focusout(function() {
 
 });
 
-// Start function upon clicking the submit button.
+// Comment Field Validation
+$comment.focusout(function() {
+    if ($comment.val() == "") {
+        $('.alertComment').show().html("Please leave us a comment!").css(error);
+        $submitDisable();
+    } else {
+        $('.alertComment').hide();
+        $submitEnable();
+    }
+});
+
+// Start Ajax request upon clicking the submit button.
 $submit.click(function(evt) {
     // Stop the default behavior of the form so that we can check for validation.
     evt.preventDefault();
-    // Need comments
+    // Using post method to send the form data
     $.post(url, formData, function() {
+        // Using call back to first fade out the form for effect
         $form.fadeOut(1000, function(response) {
+            // Using another call back function to show the success and fail response with the done and fail methods
+            //  with the variable below as well as fade in the response
             var success = "<p> Thank you for contacting us!</p><br>";
-            success += "<p>We will be in touch with you soon!<p>"
+            success += "<p>We will be in touch with you soon!<p>";
+            var failure = "<p> Oh no! Something happened! Please refresh and try again!<p>";
             $form.fadeIn(1000).html(success);
         })
+
     })
 });

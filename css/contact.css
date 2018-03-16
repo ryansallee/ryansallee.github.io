@@ -37,6 +37,11 @@ input {
     border-radius: 5px;
 }
 
+.asterisk {
+    color: red;
+    padding-right: 1px;
+}
+
 .inputs,
 .checks {
     margin: 0 auto 5px auto;
@@ -116,10 +121,13 @@ fieldset {
 @media (min-width: 1024px) {
     .contactForm {
         width: 92.5%;
-        margin-top: 87.5px;
+        margin-top: 72px;
     }
     .inputs,
     .checks {
         width: 35%;
+    }
+    .comments {
+        width: 65%;
     }
 }

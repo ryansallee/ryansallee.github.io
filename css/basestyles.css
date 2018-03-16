@@ -103,6 +103,7 @@ header {
 .footer,
 .foot-name {
     display: flex;
+    flex: 1;
 }
 
 .footer {
@@ -219,9 +220,43 @@ a[href^="mailto:l"]::before {
             box-shadow: none;
         }
     }
+    @-webkit-keyframes main-nav {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 2px 2px 2px black;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+    @-moz-keyframes main-nav {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 2px 2px 2px black;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+    @-o-keyframes main-nav {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 2px 2px 2px black;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
     .main-nav li:hover {
-        animation-name: main-nav;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
+        animation: main-nav 3s infinite;
+        -moz-animation: main-nav 3s infinite;
+        -webkit-animation: main-nav 3s infinite;
+        -o-animation: main-nav 3s infinite;
     }
 }

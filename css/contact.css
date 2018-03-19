@@ -1,12 +1,15 @@
+/* This stylesheet is for the contact form only in conjunction with the basestyles.css to be applied on 
+all pages. */
+
+
 /* Base Styles */
 
 
-/* The z-index for the form is needed so that when we use our AJAX script
-for the form submission to our test CORS-enabled server that the fade out does not 
-overlap the main header */
+/* The basestyles.css sets the body display to flex. To prevent any issues with IE 10 and IE: 11
+with flex due to a bug with IE in respect to flex, the flex 1 0 auto is used. */
 
 .contactForm {
-    flex: 1;
+    flex: 1 0 auto;
     width: 97.5%;
     background: white;
     margin: 10px auto;
@@ -14,6 +17,9 @@ overlap the main header */
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
     position: relative;
     z-index: 0;
+    /* The z-index for the form is needed so that when we use our AJAX script
+for the form submission to our test CORS-enabled server that the fade out does not 
+overlap the main header */
 }
 
 form {
@@ -67,10 +73,17 @@ fieldset {
     margin-left: 5px;
 }
 
+
+/* This ensures that the comments will take up a large area on smaller screens for maximum visiblilty. */
+
 .comments {
     width: 85%;
     margin: 0 auto;
 }
+
+
+/* This will make sure that the textarea fills the entire div for comments that is specified above and in media queries
+/* and does not need a col specified in the HTML */
 
 .comments textarea {
     width: 100%;
@@ -110,6 +123,7 @@ fieldset {
     .checks {
         width: 35%;
     }
+    /* Takes down the comments width some for tablet-sized screens so that the form doesn't appear imbalanced. */
     .comments {
         width: 75%;
     }
@@ -127,6 +141,7 @@ fieldset {
     .checks {
         width: 35%;
     }
+    /* Decreases the comments div width for large screen balance. */
     .comments {
         width: 65%;
     }

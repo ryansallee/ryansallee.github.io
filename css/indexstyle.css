@@ -1,12 +1,19 @@
 /* Base Styles */
 
+
+/* The basestyles.css sets the body display to flex. To prevent any issues with IE 10 and IE: 11
+with flex due to a bug with IE in respect to flex, the flex 1 0 auto is used. */
+
 #spring-alert,
 .main-content {
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 
 /* Message */
+
+
+/* This will set the style for the #alert div that will be supplied content byt the spring.js script */
 
 #alert {
     margin-top: 10px;

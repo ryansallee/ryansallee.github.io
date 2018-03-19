@@ -1,4 +1,11 @@
+/* This CSS will be used on every page so that a base format can be accessed for every page
+/* and makes sure that duplicate CSS doesn't need to be written. */
+
+
 /* Base Styles */
+
+
+/*Make all children of the body tag flex items so that there can be a sticky footer  */
 
 body {
     display: flex;
@@ -68,6 +75,9 @@ header {
 
 /*Generated Nav Bar Content */
 
+
+/* The CSS :before selectors are used here to insert symbols in the navigation items  */
+
 .home::before {
     content: url(../img/home.svg);
     margin-right: 3px;
@@ -100,10 +110,16 @@ header {
 
 /* Footer */
 
+
+/* The footer will have all of the child elements as flex items, but also the h3 with the foot-name class */
+
+
+/* will also make sure that it has the flex-nav div flexed as well. */
+
 .footer,
 .foot-name {
     display: flex;
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 .footer {
@@ -114,6 +130,7 @@ header {
 
 .foot-name {
     margin: 5px auto 10px auto;
+    height: 24px;
     border-bottom: 1px solid black;
     flex-direction: row;
 }
@@ -125,6 +142,9 @@ header {
 
 
 /* Generated Footer Content */
+
+
+/* Much like the Nav Bar, the CSS :before selector inserts SVG symbols nex to key contact information */
 
 a[href^="mailto:l"]::before {
     content: url(../img/email.svg);
@@ -200,6 +220,7 @@ a[href^="mailto:l"]::before {
     .main-nav li {
         border-radius: 25px 100px 5px 100px;
         margin: auto 10px;
+        max-height: 23.5px;
     }
     .main-nav a {
         padding: 0 15px;
@@ -207,42 +228,9 @@ a[href^="mailto:l"]::before {
     .main-nav {
         margin-bottom: 0px;
     }
-    /* To give some depth and draw attention to the list items in the .main-nav class, I added a simple animation on a subtle box-shadow whenever
+    /* To give some depth and draw attention to the list items in the .main-nav class, I added a simple animation with a subtle box-shadow whenever
     a visitor hovers over the list items in the main nav. */
-    @keyframes main-nav {
-        0% {
-            box-shadow: none;
-        }
-        50% {
-            box-shadow: 2px 2px 2px black;
-        }
-        100% {
-            box-shadow: none;
-        }
-    }
-    @-webkit-keyframes main-nav {
-        0% {
-            box-shadow: none;
-        }
-        50% {
-            box-shadow: 2px 2px 2px black;
-        }
-        100% {
-            box-shadow: none;
-        }
-    }
-    @-moz-keyframes main-nav {
-        0% {
-            box-shadow: none;
-        }
-        50% {
-            box-shadow: 2px 2px 2px black;
-        }
-        100% {
-            box-shadow: none;
-        }
-    }
-    @-o-keyframes main-nav {
+    @keyframes main-nav-boxshadow {
         0% {
             box-shadow: none;
         }
@@ -254,9 +242,22 @@ a[href^="mailto:l"]::before {
         }
     }
     .main-nav li:hover {
-        animation: main-nav 3s infinite;
-        -moz-animation: main-nav 3s infinite;
-        -webkit-animation: main-nav 3s infinite;
-        -o-animation: main-nav 3s infinite;
+        animation: main-nav-boxshadow 3s infinite;
+    }
+}
+
+
+/* IE 10 + For .main-nav display issues */
+
+
+/* Before there were flex issues on the main-nav that is known to IE, a media query is used */
+
+
+/* so that the navigation items are centered in the header. */
+
+@media all and (-ms-high-contrast: none) and (min-width: 1024px),
+(-ms-high-contrast: active) and (min-width: 1024px) {
+    .main-nav li {
+        margin: 19.75px 10px;
     }
 }

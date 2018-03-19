@@ -117,7 +117,7 @@ $comment.focusout(function() {
     // Ensure the comment input is not blank. If it is blank, display an error message and set it to the errorStyle.  
     // Disables the submit button like the other validations.
     if ($comment.val() == "") {
-        $('.alertComment').show().html("Please leave us a comment!").css(errorStyle);;
+        $('.alertComment').show().html("Please leave us a comment!").css(errorStyle);
         $submitDisable();
     } else {
         $('.alertComment').hide();
@@ -129,6 +129,11 @@ $comment.focusout(function() {
 $submit.click(function(evt) {
     // Stop the default behavior of the form so that we can check for validation.
     evt.preventDefault();
+    if ($comment.val() == "") {
+        $('.alertComment').show().html("Please leave us a comment!").css(errorStyle);
+        return;
+    }
+    // These functions need to be saved as variables.
     // Using post method to send the form data with the AJAX method to have simple error handling.
     $.ajax({
         type: "POST",

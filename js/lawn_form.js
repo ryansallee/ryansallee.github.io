@@ -35,105 +35,87 @@ var errorStyle = {
     "font-weight": "bold"
 };
 
-// This variable is declared for the event handler that will be placed on the reset button. If the reset button
-// is clicked, this variable will be set to true. In the validation functions, this variable will be used to escape the function
-// as the event handler focuses out and causes issues with the focus to be returned to the name field.
-var notDoValidation = false;
-
-// Declare named functions both to enable and disable the submit button with the jQuery method prop() if the 
-// field fails a valiation that we will have next.
-// We will be able to call the functions in the validations to disable or enable the Submit button.
-function $submitDisable() {
-    $submit.prop('disabled', true);
-};
-
-function $submitEnable() {
-    $submit.prop('disabled', false);
-}
+// This variable is declared for the event handler that will be placed on the submit button. If any of the following
+// validations are true, this variable will be set to true so that the event handler on the submit cannot proceed to
+// submitting the AJAX request.
+var notDoSubmit = false;
 
 
-// The next 4 functions will validate the name, email, phone number, and comment fields
-// whenever the visitor enters an input field and leaves the input field. 
+// // The next 4 functions will validate the name, email, phone number, and comment fields
+// // whenever a visitor attempts to submit the form. They will be called on the click even handler on the submit button.
 
-// Email validation
-$email.focusout(function() {
-    // Return from function
-    if (notDoValidation) {
-        return
-    }
-    // Test email input against the regEx for email and being blank. If it meets the criteria of not matching an
-    // email format or being blank, display an error message and set it to the errorStyle. Also it will disable the 
-    // submit button.
-    if (!emailFormat.test($email.val()) || $email.val() == "") {
-        $(".alertEmail").show().html("A valid email address is required!").css(errorStyle);
-        $submitDisable();
-    } else {
-
-        $('.alertEmail').hide();
-        $submitEnable();
-    }
-
-});
-
-// Name field validation
-$name.focusout(function() {
-    if (notDoValidation) {
-        return
-    }
-    // Ensure the name input is not blank. If it is blank, display an error message and set it to the errorStyle.  
-    // Like in the email validation, disable the submit button.
+function nameValidate() {
+    // Ensure the name input is not blank. If it is blank, display an error message and set it to the errorStyle.
     if ($name.val() == "") {
         $('.alertName').show().html("Please enter your name!").css(errorStyle);
-        $submitDisable();
+        notDoSubmit = true;
     } else {
+        // If the form has had a previous submission and now the name field contains information, clear it out, and
+        // set the notDoSubmit variable to false so that in a later conditional statement in the submit click handler
+        // fails and allows the AJAX request to be sent.
         $('.alertName').hide();
-        $submitEnable();
+        notDoSubmit = false;
     }
-});
+}
 
-//Phone number field validation
-$phone.focusout(function() {
-    if (notDoValidation) {
-        return
+function emailValidate() {
+    // Test email input against the regEx for email and being blank. If it meets the criteria of not matching an
+    // email format or being blank, display an error message and set it to the errorStyle. 
+    if (!emailFormat.test($email.val()) || $email.val() == "") {
+        $(".alertEmail").show().html("A valid email address is required!").css(errorStyle);
+        notDoSubmit = true;
+    } else {
+        // If the form has had a previous submission and now the email field contains information, clear it out, and
+        // set the notDoSubmit variable to false so that in a later conditional statement in the submit click handler
+        // fails and allows the AJAX request to be sent.
+        $('.alertEmail').hide();
+        notDoSubmit = false;
     }
+}
+
+function phoneValidate() {
     // Test phone number input against the regEx for US phone numbers and being blank. If it meets the criteria of not matching an
-    // US phone number format or being blank, display an error message and set it to the errorStyle. Like the other validations,
-    // disable the submit button.
+    // US phone number format or being blank, display an error message and set it to the errorStyle. 
     if ($phone.val() == "" || !phoneFormat.test($phone.val())) {
         $('.alertPhone').show().html("Please provide us your phone number so we may call you.").css(errorStyle);
-        $submitDisable();
     } else {
+        // If the form has had a previous submission and now the email field contains information, clear it out, and
+        // set the notDoSubmit variable to false so that in a later conditional statement in the submit click handler
+        // fails and allows the AJAX request to be sent.
         $('.alertPhone').hide();
-        $submitEnable();
+        notDoSubmit = false;
     }
+}
 
-});
-
-// Comment Field Validation
-$comment.focusout(function() {
-    if (notDoValidation) {
-        return
-    }
-    // Ensure the comment input is not blank. If it is blank, display an error message and set it to the errorStyle.  
-    // Disables the submit button like the other validations.
+function commentValidate() {
+    // Ensure the comment input is not blank. If it is blank, display an error message and set it to the errorStyle.
     if ($comment.val() == "") {
         $('.alertComment').show().html("Please leave us a comment!").css(errorStyle);
-        $submitDisable();
+        notDoSubmit = true;
     } else {
+        // If the form has had a previous submission and now the comment field contains information, clear it out, and
+        // set the notDoSubmit variable to false so that in a later conditional statement in the submit click handler
+        // fails and allows the AJAX request to be sent.
         $('.alertComment').hide();
-        $submitEnable();
+        notDoSubmit = false;
     }
-});
+}
 
 // Start Ajax request upon clicking the submit button.
 $submit.click(function(evt) {
     // Stop the default behavior of the form so that we can check for validation.
     evt.preventDefault();
-    if ($comment.val() == "") {
-        $('.alertComment').show().html("Please leave us a comment!").css(errorStyle);
+    nameValidate();
+    emailValidate();
+    phoneValidate();
+    commentValidate();
+
+    // If after all of the validations above have run and the notDoSubmit variable is equal to true, return from
+    // the click handler event so that the AJAX request below cannot be sent.
+    if (notDoSubmit) {
         return;
     }
-    // These functions need to be saved as variables.
+
     // Using post method to send the form data with the AJAX method to have simple error handling.
     $.ajax({
         type: "POST",
@@ -166,15 +148,8 @@ $submit.click(function(evt) {
 // This is the portion of the script to reset and hide all of the error messages if reset clicked. As well, the 
 // input field for name will receive focus. The mousedown method is used.
 $('input[type="reset"]').on("mousedown", function(evt) {
-    // Set the notDoValidation to true so that when focus is lost on the current input field the validations
-    // do not fire and cause the focus that is to be sent to the name field to be interrupted.
-    notDoValidation = true;
-    // Hide all of the active error messages and send the focus to the name input. Reset the notDoValidation
-    // variable to false so that the validations can be tested again once each individual field loses focus.
     $errorSpans.hide(function() {
         $name.focus();
-        notDoValidation = false;
     })
-
 });
 // End of reset.

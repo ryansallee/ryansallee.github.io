@@ -131,6 +131,7 @@ fieldset {
     .contactForm {
         width: 92.5%;
         margin: 72px auto 10px;
+        position: relative;
     }
     .inputs,
     .checks {

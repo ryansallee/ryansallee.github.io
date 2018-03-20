@@ -9,9 +9,9 @@
 var todayDate = Date.now();
 
 
-//Set up variable to store the end date for the message
-var SpringDate = new Date(2018, 02, 20);
-SpringDate = SpringDate.getTime();
+//Set up variable to store the end date for the message, March 20 2018, the beginning of spring.
+var beginSpringDate = new Date(2018, 02, 20);
+beginSpringDate = beginSpringDate.getTime();
 
 // Set up variable to set an end date of the message after spring has come.
 // The end date will be the beginning of summer.
@@ -28,12 +28,12 @@ function displayMessage() {
         // Select the Alert Div to insert messages
     var div = document.querySelector("#alert")
         // Test Condition to make sure it is before spring. If so, insert the beforeSpringMessage.
-    if (todayDate < SpringDate) {
+    if (todayDate < beginSpringDate) {
         div.innerHTML = beforeSpringMessage;
         div.style.background = "rgb(240, 128, 41)";
 
         // Test Condition to see if it is after spring, but before summer. If so, insert the beforeSummerMessage.
-    } else if (beginSummerDate > todayDate && todayDate > SpringDate) {
+    } else if (beginSummerDate > todayDate && todayDate > beginSpringDate) {
         div.innerHTML = beforeSummerMessage;
         div.style.background = "rgb(239, 52, 34)";
     }

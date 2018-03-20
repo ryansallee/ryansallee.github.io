@@ -1,261 +1,229 @@
-/* This CSS will be used on every page so that a base format can be accessed for every page
+    /* This CSS will be used on every page so that a base format can be accessed for every page
 /* and makes sure that duplicate CSS doesn't need to be written. */
-
-
-/* Base Styles */
-
-
-/*Make all children of the body tag flex items so that there can be a sticky footer  */
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: linear-gradient(0deg, white, rgb(33, 128, 33));
-}
-
-
-/* Font Styling */
-
-h1,
-h3 {
-    font-family: 'Fjalla One', sans-serif;
-    font-style: italic;
-}
-
-h1 {
-    margin: 0;
-    text-align: center;
-}
-
-a,
-a:visited {
-    color: inherit;
-    text-decoration: none;
-}
-
-a {
-    font-style: italic;
-}
-
-.main-nav a {
-    font-style: normal;
-}
-
-
-/* Nav Bar */
-
-header {
-    background: linear-gradient(0deg, white, rgb(76, 191, 236));
-}
-
-.name a {
-    font-size: 1.5em;
-    color: rgb(33, 128, 33);
-}
-
-.main-nav li {
-    background: rgb(33, 128, 33);
-    text-align: center;
-    margin: 0 20% 2PX 20%;
-    border-radius: 25px;
-    display: block;
-    font-size: 1.25em
-}
-
-.main-header a {
-    text-decoration: none;
-}
-
-.main-nav a {
-    color: white;
-    display: block;
-}
-
-
-/*Generated Nav Bar Content */
-
-
-/* The CSS :before selectors are used here to insert symbols in the navigation items  */
-
-.home::before {
-    content: url(../img/home.svg);
-    margin-right: 3px;
-}
-
-.leaf::before {
-    content: url(../img/leaf.svg);
-    margin-right: 3px;
-    display: inline-block;
-}
-
-.shovel::before {
-    content: url(../img/tool.svg);
-    margin-right: 3px;
-    display: inline-block;
-}
-
-.contactUs::before {
-    content: url(../img/contact_us.svg);
-    margin-right: 3px;
-    display: inline-block;
-}
-
-
-/* Footer */
-
-
-/* The footer will have all of the child elements as flex items, but also the h3 with the foot-name class */
-
-
-/* will also make sure that it has the flex-nav div flexed as well. */
-
-.footer,
-.foot-name {
-    display: flex;
-    flex: 1 0 auto;
-    align-items: center;
-}
-
-.footer {
-    background-color: rgb(175, 174, 174);
-    flex-direction: column;
-}
-
-.foot-name {
-    margin: 5px auto 10px auto;
-    border-bottom: 1px solid black;
-    flex-direction: row;
-}
-
-.ryan,
-.disclaimer {
-    font-size: .5em;
-    text-align: center;
-}
-
-
-/* Generated Footer Content */
-
-
-/* Much like the Nav Bar, the CSS :before selector inserts SVG symbols nex to key contact information */
-
-a[href^="mailto:n"]::before {
-    content: url(../img/email.svg);
-    margin-right: 2px;
-    display: inline-block;
-}
-
-#telephone::before {
-    content: url(../img/phone.svg);
-    margin-right: 2px;
-    display: inline-block;
-}
-
-.footer a[href="index.html"]::before {
-    content: url(../img/foot_home.svg);
-    margin-right: 2px;
-    display: inline-block;
-}
-
-
-/* Media Queries */
-
-
-/*-----Tablet------*/
-
-@media (min-width: 640px) {
-    /* The three following inside this media query with the flex rule above set up the tablet display where the title
-    of the site displays on top with a navigation bar below so that the header is not crowded on intermediate size screens.*/
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-    }
-    h1 {
-        margin-bottom: 2px;
-    }
-    .main-header,
-    .main-nav {
+    /* Base Styles */
+    /*Make all children of the body tag flex items so that there can be a sticky footer  */
+    
+    body {
         display: flex;
-    }
-    .main-header {
         flex-direction: column;
-        justify-content: space-between;
-        width: 95%;
-        margin: 0 auto;
+        min-height: 100vh;
+        background: linear-gradient(0deg, white, rgb(33, 128, 33));
     }
-    .main-nav {
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-bottom: 2px;
+    /* Font Styling */
+    
+    h1,
+    h3 {
+        font-family: 'Fjalla One', sans-serif;
+        font-style: italic;
     }
-    .main-nav li {
-        flex-grow: 1;
-        border-radius: 100px 100px;
-        border: white .25px solid;
-        margin: 0 10px;
+    
+    h1 {
+        margin: 0;
+        text-align: center;
     }
-    /* Footer Styles */
-    /* .footer {
-        max-height: 100px;
-    } */
-}
-
-
-/* Desktop and Laptop */
-
-@media (min-width: 1025px) {
-    /*Nav Bar */
-    /* The flex direction of the main-header will be row so that the <h1> and <li> in .main-nav will display horizontally
-    rather than the <h1> stacked on top of the navigation links as in the Tablet media queries */
-    .main-header {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 92.5%;
-        margin: 0 auto;
+    
+    a,
+    a:visited {
+        color: inherit;
+        text-decoration: none;
     }
-    .main-nav li {
-        border-radius: 25px 100px 5px 100px;
-        margin: auto 10px;
-        max-height: 23.5px;
+    
+    a {
+        font-style: italic;
     }
+    
     .main-nav a {
-        padding: 0 15px;
+        font-style: normal;
     }
-    .main-nav {
-        margin-bottom: 0px;
+    /* Nav Bar */
+    
+    header {
+        background: linear-gradient(0deg, white, rgb(76, 191, 236));
     }
-    /* To give some depth and draw attention to the list items in the .main-nav class, I added a simple animation with a subtle box-shadow whenever
-    a visitor hovers over the list items in the main nav. */
-    @keyframes main-nav-boxshadow {
-        0% {
-            box-shadow: none;
-        }
-        50% {
-            box-shadow: 2px 2px 2px black;
-        }
-        100% {
-            box-shadow: none;
-        }
+    
+    .name a {
+        font-size: 1.5em;
+        color: rgb(33, 128, 33);
     }
-    .main-nav li:hover {
-        animation: main-nav-boxshadow 3s infinite;
-    }
-}
-
-
-/* /* IE 10 + For .main-nav display issues  */
-
-
-/* Before there were flex issues on the main-nav that is known to IE, a media query is used 
-so that the navigation items are centered in the header. */
-
-@media all and (-ms-high-contrast: none) and (min-width: 1024px),
-(-ms-high-contrast: active) and (min-width: 1024px) {
+    
     .main-nav li {
-        margin: 19.75px 10px;
+        background: rgb(33, 128, 33);
+        text-align: center;
+        margin: 0 20% 2PX 20%;
+        border-radius: 25px;
+        display: block;
+        font-size: 1.25em
     }
-}
+    
+    .main-header a {
+        text-decoration: none;
+    }
+    
+    .main-nav a {
+        color: white;
+        display: block;
+    }
+    /*Generated Nav Bar Content */
+    /* The CSS :before selectors are used here to insert symbols in the navigation items  */
+    
+    .home::before {
+        content: url(../img/home.svg);
+        margin-right: 3px;
+    }
+    
+    .leaf::before {
+        content: url(../img/leaf.svg);
+        margin-right: 3px;
+        display: inline-block;
+    }
+    
+    .shovel::before {
+        content: url(../img/tool.svg);
+        margin-right: 3px;
+        display: inline-block;
+    }
+    
+    .contactUs::before {
+        content: url(../img/contact_us.svg);
+        margin-right: 3px;
+        display: inline-block;
+    }
+    /* Footer */
+    /* The footer will have all of the child elements as flex items, but also the h3 with the foot-name class */
+    /* will also make sure that it has the flex-nav div flexed as well. */
+    
+    .footer,
+    .foot-name {
+        display: flex;
+        flex: 1 0 auto;
+        align-items: center;
+    }
+    
+    .footer {
+        background-color: rgb(175, 174, 174);
+        flex-direction: column;
+    }
+    
+    .foot-name {
+        margin: 5px auto 10px auto;
+        border-bottom: 1px solid black;
+        flex-direction: row;
+    }
+    
+    .ryan,
+    .disclaimer {
+        font-size: .5em;
+        text-align: center;
+    }
+    /* Generated Footer Content */
+    /* Much like the Nav Bar, the CSS :before selector inserts SVG symbols nex to key contact information */
+    
+    a[href^="mailto:n"]::before {
+        content: url(../img/email.svg);
+        margin-right: 2px;
+        display: inline-block;
+    }
+    
+    #telephone::before {
+        content: url(../img/phone.svg);
+        margin-right: 2px;
+        display: inline-block;
+    }
+    
+    .footer a[href="index.html"]::before {
+        content: url(../img/foot_home.svg);
+        margin-right: 2px;
+        display: inline-block;
+    }
+    /* Media Queries */
+    /*-----Tablet------*/
+    
+    @media (min-width: 640px) {
+        /* The three following inside this media query with the flex rule above set up the tablet display where the title
+    of the site displays on top with a navigation bar below so that the header is not crowded on intermediate size screens.*/
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        h1 {
+            margin-bottom: 2px;
+        }
+        .main-header,
+        .main-nav {
+            display: flex;
+        }
+        .main-header {
+            flex-direction: column;
+            justify-content: space-between;
+            width: 95%;
+            margin: 0 auto;
+        }
+        .main-nav {
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 2px;
+        }
+        .main-nav li {
+            flex-grow: 1;
+            border-radius: 100px 100px;
+            border: white .25px solid;
+            margin: 0 10px;
+        }
+        /* Footer Styles  */
+        .footer {
+            max-height: 100px;
+        }
+    }
+    /* Desktop and Laptop */
+    
+    @media (min-width: 1025px) {
+        /*Nav Bar */
+        /* The flex direction of the main-header will be row so that the <h1> and <li> in .main-nav will display horizontally
+    rather than the <h1> stacked on top of the navigation links as in the Tablet media queries */
+        .main-header {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 92.5%;
+            margin: 0 auto;
+        }
+        .main-nav li {
+            border-radius: 25px 100px 5px 100px;
+            margin: auto 10px;
+            max-height: 23.5px;
+        }
+        .main-nav a {
+            padding: 0 15px;
+        }
+        .main-nav {
+            margin-bottom: 0px;
+        }
+        /* To give some depth and draw attention to the list items in the .main-nav class, I added a simple animation with a subtle box-shadow whenever
+    a visitor hovers over the list items in the main nav. */
+        @keyframes main-nav-boxshadow {
+            0% {
+                box-shadow: none;
+            }
+            50% {
+                box-shadow: 2px 2px 2px black;
+            }
+            100% {
+                box-shadow: none;
+            }
+        }
+        .main-nav li:hover {
+            animation: main-nav-boxshadow 3s infinite;
+        }
+    }
+    /* /* IE 10 + For .main-nav display issues  */
+    /* Before there were flex issues on the main-nav that is known to IE, a media query is used 
+so that the navigation items are centered in the header. */
+    
+    @media all and (-ms-high-contrast: none) and (min-width: 1024px),
+    (-ms-high-contrast: active) and (min-width: 1024px) {
+        .main-nav li {
+            margin: 19.75px 10px;
+        }
+    }

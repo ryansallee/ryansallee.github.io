@@ -35,10 +35,13 @@ var errorStyle = {
     "font-weight": "bold"
 };
 
-// This variable is declared for the event handler that will be placed on the submit button. If any of the following
+// These variables are declared for the event handler that will be placed on the submit button. If any of the following
 // validations are true, this variable will be set to true so that the event handler on the submit cannot proceed to
 // submitting the AJAX request.
-var notDoSubmit = false;
+var doNotSubmitName = false;
+var doNotSubmitEmail = false;
+var doNotSubmitPhone = false;
+var doNotSubmitComments = false;
 
 
 // // The next 4 functions will validate the name, email, phone number, and comment fields
@@ -48,13 +51,13 @@ function nameValidate() {
     // Ensure the name input is not blank. If it is blank, display an error message and set it to the errorStyle.
     if ($name.val() == "") {
         $('.alertName').show().html("Please enter your name!").css(errorStyle);
-        notDoSubmit = true;
+        doNotSubmitName = true;
     } else {
         // If the form has had a previous submission and now the name field contains information, clear it out, and
-        // set the notDoSubmit variable to false so that in a later conditional statement in the submit click handler
+        // set the doNotSubmit variable to false so that in a later conditional statement in the submit click handler
         // fails and allows the AJAX request to be sent.
         $('.alertName').hide();
-        notDoSubmit = false;
+        doNotSubmitName = false;
     }
 }
 
@@ -63,13 +66,13 @@ function emailValidate() {
     // email format or being blank, display an error message and set it to the errorStyle. 
     if (!emailFormat.test($email.val()) || $email.val() == "") {
         $(".alertEmail").show().html("A valid email address is required!").css(errorStyle);
-        notDoSubmit = true;
+        doNotSubmitEmail = true;
     } else {
         // If the form has had a previous submission and now the email field contains information, clear it out, and
-        // set the notDoSubmit variable to false so that in a later conditional statement in the submit click handler
+        // set the doNotSubmit variable to false so that in a later conditional statement in the submit click handler
         // fails and allows the AJAX request to be sent.
         $('.alertEmail').hide();
-        notDoSubmit = false;
+        doNotSubmitEmail = false;
     }
 }
 
@@ -78,12 +81,13 @@ function phoneValidate() {
     // US phone number format or being blank, display an error message and set it to the errorStyle. 
     if ($phone.val() == "" || !phoneFormat.test($phone.val())) {
         $('.alertPhone').show().html("Please provide us your phone number so we may call you.").css(errorStyle);
+        doNotSubmitPhone = true;
     } else {
         // If the form has had a previous submission and now the email field contains information, clear it out, and
-        // set the notDoSubmit variable to false so that in a later conditional statement in the submit click handler
+        // set the doNotSubmit variable to false so that in a later conditional statement in the submit click handler
         // fails and allows the AJAX request to be sent.
         $('.alertPhone').hide();
-        notDoSubmit = false;
+        doNotSubmitPhone = false;
     }
 }
 
@@ -91,13 +95,13 @@ function commentValidate() {
     // Ensure the comment input is not blank. If it is blank, display an error message and set it to the errorStyle.
     if ($comment.val() == "") {
         $('.alertComment').show().html("Please leave us a comment!").css(errorStyle);
-        notDoSubmit = true;
+        doNotSubmitComments = true;
     } else {
         // If the form has had a previous submission and now the comment field contains information, clear it out, and
-        // set the notDoSubmit variable to false so that in a later conditional statement in the submit click handler
+        // set the doNotSubmit variable to false so that in a later conditional statement in the submit click handler
         // fails and allows the AJAX request to be sent.
         $('.alertComment').hide();
-        notDoSubmit = false;
+        doNotSubmitComments = false;
     }
 }
 
@@ -112,9 +116,11 @@ $submit.click(function(evt) {
 
     // If after all of the validations above have run and the notDoSubmit variable is equal to true, return from
     // the click handler event so that the AJAX request below cannot be sent.
-    if (notDoSubmit) {
-        return;
+
+    if (doNotSubmitName || doNotSubmitEmail || doNotSubmitPhone || doNotSubmitComments) {
+        throw new Error("This isn't an error and just to abort script.");
     }
+
 
     // Using post method to send the form data with the AJAX method to have simple error handling.
     $.ajax({
@@ -148,6 +154,7 @@ $submit.click(function(evt) {
 // This is the portion of the script to reset and hide all of the error messages if reset clicked. As well, the 
 // input field for name will receive focus. The mousedown method is used.
 $('input[type="reset"]').on("mousedown", function(evt) {
+    evt.preventDefault();
     $errorSpans.hide(function() {
         $name.focus();
     })

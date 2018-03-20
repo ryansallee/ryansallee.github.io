@@ -3,7 +3,7 @@ slideNumber = 0;
 w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
 var targetWidth = 640;
 
-showSlides();
+var slideInterval = setInterval(showSlides, 1000);
 
 function showSlides() {
     var i = 0;
@@ -17,7 +17,7 @@ function showSlides() {
             slideNumber = 1;
         }
         slides[slideNumber - 1].style.display = "block";
-        setTimeout(showSlides, 2000)
+
     }
 };
 

@@ -20,6 +20,7 @@ with flex due to a bug with IE in respect to flex, the flex 1 0 auto is used. */
     /* The z-index for the form is needed so that when we use our AJAX script
 for the form submission to our test CORS-enabled server that the fade out does not 
 overlap the main header */
+    min-height: 567px;
 }
 
 form {

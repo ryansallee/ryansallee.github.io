@@ -120,4 +120,12 @@ function slideShow(n) {
     }
 
 };
+
+// Set the control buttons display to inline-block so that they display if JS is enabled.
+if (viewPortWidth >= targetWidth) {
+    pauseButton.style.display = "inline-block";
+    resumeButton.style.display = "inline-block";
+    nextButton.style.display = "inline-block";
+    previousButton.style.display = "inline-block";
+}
 // End of of Script

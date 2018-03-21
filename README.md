@@ -1,10 +1,10 @@
-#### Lawn_Paynes
+# Lawn_Paynes
 
-### Purpose
+## Purpose
 
 The Lawn Paynes website is a proposal page for a friend who is looking to expand his small lawn care and landscaping business by showing which services he provides, examples of his work using a slideshow, and a contact page to allow customers to reach out to him. 
 
-### JavaScript Functions
+## JavaScript Functions
 
 
 1. `displayMessage()` file: [spring.js](https://github.com/ryansallee/ryansallee.github.io/blob/master/js/spring.js)
@@ -20,7 +20,7 @@ To test the the displayMessage conditions for when it is before spring, please c
 - The jQuery `$.ajax` function is executed if the the validations `nameValidate()`, `emailValidate()`, `phoneValidate()`, `commentValidate()` are sucessful (`doNotSubmitName`, `doNotSubmitEmail`, `doNotSubmitPhone`, `doNotSubmitEmail` are all false) after the click event on the submit button(`submitButton`). The AJAX request is configured as a POST request, with the the serialized data from the inputs in the form (`formData`), and sends the request to a URL that returns a response CORS (Cross-Origin Resource Sharing) header that bypasses the same-origin policy. If a successful response is sent, a function is called to fade out the form using the `.fadeOut()` jQuery method and an anonymous function is called to fade the form back in using `.fadeIn()` and display `successMessage` in the form. If the response is an error, the `.errorAlert` class is selected and `errorMessage` displays in this div above the Name input.
 - Testing Notes: To test the form, please place valid input in the input fields and submit the form. The form will fade out over 1 second, and the message contained in `successMessage` will fade  in over 1 second. To test the error message, load the page, disconnect from your web connection, and then submit the form. Since the there will be no request, an error will be returned for the request and `errorMessage` will display in the div above the Name input.
 
-### CSS Classes
+## CSS Classes
 1. `.slide-container` file: [our_workstyle.css](https://github.com/ryansallee/ryansallee.github.io/blob/master/css/our_workstyle.css) 
 - The purpose of this this custom class is to set a flex container for the images displayed on small screens to stack them upon one another as well as set a limiting container the images in the slideshow on larger screens (>=640px). For all screens, this container gives depth to the page with a box-shadow style and decreases the blockiness of the container with a border-radius style of 25px in addition to providing some contrast by using a shade of blue, but with the gradient-direction reversed from the direction of the body.On smaller screens, the container almost fills the page with a 97.5% width to give it some breathing room, but ensure that the container is not small on mobile devices. For larger screens, the width is decreased so that the `.slides` container that contains slideshow images are not overly large, and padding is applied to allow the `.slides` container to breathe since the img selector for tablet sized screens fills the whole `.slides` container with a 100% max-width and max-height. Furthermore, the width is significantly decreased on desktops and laptops (>=1025px)to ensure that the container does not extend below the user's viewport.
 

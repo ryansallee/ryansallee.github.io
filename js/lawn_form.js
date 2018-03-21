@@ -140,8 +140,6 @@ $submitButton.click(function(evt) {
         // If there is an error from the server or the site cannot connect to the server the error alert span will 
         // display the errorMessage variable.
         error: function(xhr, ajaxOptions, thrownError) {
-            // Log the error to the console for the purpose of testing
-            console.log(xhr.status);
             // Declare the errorMessage variable.
             var errorMessage = "<p> Oh no! Something went wrong! Please try again.<p>";
             // The errorMessage displays in the errorAlert span

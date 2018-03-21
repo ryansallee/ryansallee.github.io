@@ -109,7 +109,7 @@ function slideShow(n) {
         }
         // Loop through i to set the current slide's display to none
         for (i; i < slides.length; i += 1) {
-            slides[i].style.display = "none"
+            slides[i].style.display = "none";
         }
         // Show the next slide since slideNumber is advanced by 1 when slideShow is called or the nextButton
         // onclick event handler is accessed. This shows the previous slide if the previousButton on click event

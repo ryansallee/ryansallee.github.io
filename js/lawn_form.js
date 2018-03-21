@@ -59,7 +59,7 @@ function nameValidate() {
         $('.alertName').hide();
         doNotSubmitName = false;
     }
-}
+};
 
 function emailValidate() {
     // Test email input against the regEx for email and being blank. If it meets the criteria of not matching an
@@ -74,7 +74,7 @@ function emailValidate() {
         $('.alertEmail').hide();
         doNotSubmitEmail = false;
     }
-}
+};
 
 function phoneValidate() {
     // Test phone number input against the regEx for US phone numbers and being blank. If it meets the criteria of not matching an
@@ -89,7 +89,7 @@ function phoneValidate() {
         $('.alertPhone').hide();
         doNotSubmitPhone = false;
     }
-}
+};
 
 function commentValidate() {
     // Ensure the comment input is not blank. If it is blank, display an error message and set it to the errorStyle.
@@ -103,7 +103,7 @@ function commentValidate() {
         $('.alertComment').hide();
         doNotSubmitComments = false;
     }
-}
+};
 
 // Start Ajax request upon clicking the submit button.
 $submitButton.click(function(evt) {

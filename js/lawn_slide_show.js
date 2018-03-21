@@ -1,4 +1,4 @@
-// // This script's purpose is to create a slideshow feature on the our_work.html page that only runs
+// This script's purpose is to create a slideshow feature on the our_work.html page that only runs
 // on viewports 640px or wider that has functional next, previous, pause and resume buttons. It also 
 // overrides CSS to make sure that controls and the slides for the slideshow are displayed.
 
@@ -7,6 +7,7 @@ var slides = document.querySelectorAll('.slides');
 // Declare variable to keep a counter of the .slides divs.
 var slideNumber = 0;
 // Set variables to detect the viewport width and to set the minimum width for the slideShow function to apply
+// to viewport greater than or equal to 640px.
 var viewPortWidth = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
 var targetWidth = 640;
 // Set variable for the slideinterval for the slides to advance every 3 seconds by calling slideShow every 3 seconds
@@ -22,49 +23,45 @@ var nextButton = document.querySelector('#next');
 var previousButton = document.querySelector('#previous');
 
 // Function to be called to manually move the slides with the parameter n to be supplied when the function is called
-// in the nextButton and previousButton handlers
+// in the nextButton and previousButton click event handlers.
 function slideMove(n) {
     // Advance the SlideNumber variable by parameter n when the slideMove function is called
     slideShow(slideNumber += n);
-}
+};
 
 // On click event handler for the nextButton
 nextButton.onclick = function() {
     // Pass 1 as the value for the parameter to slideMove function to advance the slide by 1
     slideMove(1);
     // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
-    // of the interval
+    // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
     clearInterval(slideInterval);
-    // Reset the SlideInterval to 3 seconds
-    slideInterval = setInterval(slideShow, 3000);
-    // Makes sure the showPlaying variable is set to true if the user clicks the pauseButton to call
-    // stop() and then wants to advance one slide
-    showPlaying = true;
-}
+    // Makes sure the showPlaying variable is set to false if the user clicks the resumeButton resume() can 
+    // called.
+    showPlaying = false;
+};
 
 // On click event handler for the previousButton
 previousButton.onclick = function() {
-    // Pass -1 as the value for the parameter to slideMove function to move the slide back 1 slide (advance slide -1)
+    // Pass -1 as the value for the parameter to slideMove function to move the slide back 1 slide (advance slide -1).
     slideMove(-1);
     // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
-    // of the interval
+    // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
     clearInterval(slideInterval);
-    // Reset the SlideInterval to 3 seconds
-    slideInterval = setInterval(slideShow, 3000);
-    // Makes sure the showPlaying variable is set to true if the user clicks the pauseButton to call
-    // the stop function and then wants to advance one slide
-    showPlaying = true;
-}
+    // Makes sure the showPlaying variable is set to false if the user clicks the resumeButton resume() can 
+    // called.
+    showPlaying = false;
+};
 
 // On click event hander for the pauseButton to call the stop function
 pauseButton.onclick = function() {
     stop();
-}
+};
 
 // On click event hander for the pauseButton to call the resume function
 resumeButton.onclick = function() {
     resume();
-}
+};
 
 // Function to stop the slideshow
 function stop() {
@@ -75,7 +72,7 @@ function stop() {
         // Set the showPlaying variable to false
         showPlaying = false;
     }
-}
+};
 
 // Function to restart the slideshow
 function resume() {
@@ -87,7 +84,7 @@ function resume() {
         // Set the ShowPlaying variable to true so that the pause button can be used again.
         showPlaying = true;
     }
-}
+};
 
 // Function to run the slideshow on window load (since the script is placed at the end of the HTML)
 function slideShow(n) {
@@ -122,11 +119,17 @@ function slideShow(n) {
 
 };
 
-// Set the control buttons display to inline-block so that they display if JS is enabled.
-if (viewPortWidth >= targetWidth) {
-    pauseButton.style.display = "inline-block";
-    resumeButton.style.display = "inline-block";
-    nextButton.style.display = "inline-block";
-    previousButton.style.display = "inline-block";
-}
+// Function to set the control buttons display to inline-block so that they display if JS is enabled and the
+// viewport width dectected by Javascript is more than.
+function showButtons() {
+    if (viewPortWidth >= targetWidth) {
+        pauseButton.style.display = "inline-block";
+        resumeButton.style.display = "inline-block";
+        nextButton.style.display = "inline-block";
+        previousButton.style.display = "inline-block";
+    }
+};
+
+// // Call showButtons function to display the control buttons.
+showButtons();
 // End of of Script

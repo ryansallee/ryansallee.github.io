@@ -89,9 +89,13 @@ fieldset {
     border-radius: 5px;
 }
 
+
+/* Button Styles */
+
 .buttons {
     text-align: center;
     padding-top: 5px;
+    font-size: 1.5em;
 }
 
 .buttons input {
@@ -101,6 +105,14 @@ fieldset {
     display: inline-block;
     color: white;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
+}
+
+input[type="reset"] {
+    margin-right: 10px;
+}
+
+input[type="button"] {
+    margin-left: 10px;
 }
 
 
@@ -122,6 +134,9 @@ fieldset {
     .comments {
         width: 75%;
     }
+    .buttons {
+        margin-top: 5px;
+    }
 }
 
 
@@ -139,5 +154,10 @@ fieldset {
     /* Decreases the comments div width for large screen balance. */
     .comments {
         width: 65%;
+    }
+    /* Button Styles */
+    .buttons {
+        font-size: 1em;
+        margin-top: 0px;
     }
 }

@@ -65,6 +65,7 @@ fieldset {
 }
 
 .checks input {
+    margin-right: 2px;
     margin-left: 5px;
 }
 

@@ -1,25 +1,65 @@
 .slide-container {
     flex: 1 0 auto;
+    background: linear-gradient(180deg, white, rgb(76, 191, 236));
+    width: 97.5%;
+    margin: 10px auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgb(113, 119, 119);
+}
+
+img {
+    display: block;
+    max-width: 75%;
+    max-height: 75%;
+    border-radius: 5px;
+    margin: 10px auto;
+    box-shadow: 5px 5px 5px rgb(113, 119, 119);
+}
+
+figcaption {
+    color: black;
+    text-align: center;
+    font: .75em;
+    font-weight: bold;
+    margin-top: 1px;
 }
 
 @media (min-width: 640px) {
     .slide-container {
-        margin: 72px auto 10px auto;
-        background: linear-gradient(180deg, white, rgb(76, 191, 236));
-        padding: 10px 20px;
-        width: 30%;
-        border-radius: 25px;
-        box-shadow: 5px 5px 5px rgb(113, 119, 119);
+        margin: 97.5px auto 10px auto;
+        padding: 10px 20px 3px 20px;
+        width: 34%;
+        position: relative;
     }
     img {
         max-width: 100%;
         max-height: 100%;
-        border-radius: 5px;
+        margin: 0;
+        box-shadow: none;
     }
     .slides:nth-of-type(1n+2) {
         display: none;
     }
     footer {
         max-height: 100px;
+    }
+    #resume {
+        float: right;
+    }
+    button {
+        border-radius: 5px;
+        background-color: rgb(33, 128, 33);
+        color: white;
+        margin-bottom: 1px;
+        border: none;
+        box-shadow: 1px 1px 1px black;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slide-container {
+        margin: 67px auto 10px auto;
+        padding: 8px 20px 3px 20px;
+        width: 27%;
     }
 }

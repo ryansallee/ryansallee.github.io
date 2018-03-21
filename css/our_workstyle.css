@@ -64,14 +64,14 @@ button {
     /* Float the control buttons and give space between with margin */
     #previous {
         float: left;
-        margin-right: 10px;
+        margin-right: 20px;
     }
     #next {
         float: right;
     }
     #resume {
         float: right;
-        margin-right: 10px;
+        margin-right: 20px;
     }
     /* Style and make sure that the control buttons display on tablet sized screens and larger */
     button {
@@ -81,6 +81,7 @@ button {
         margin-bottom: 1px;
         border: none;
         box-shadow: 1px 1px 1px black;
+        font-size: 1.5em;
     }
 }
 
@@ -94,5 +95,9 @@ button {
         margin: 67px auto 10px auto;
         padding: 8px 20px 3px 20px;
         width: 27%;
+    }
+    /* Decrease the font size of the text in the buttons in larger screens */
+    button {
+        font-size: 1.05em;
     }
 }

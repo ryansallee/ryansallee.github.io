@@ -10,12 +10,13 @@ h2 {
 
 .body-title {
     font-size: 1.6em;
+    color: rgb(33, 128, 33);
     background-color: white;
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
-    padding: 0 5px;
-    border: 1px;
+    padding: 0 10px;
+    box-shadow: 2px 2px 2px rgb(113, 119, 119);
 }
 
 
@@ -32,7 +33,7 @@ h2 {
 
 .lawn-care,
 .landscaping {
-    background-color: white;
+    background: white;
     border-radius: 25px;
     width: 97.5%;
     margin: 10px auto 10px auto;

@@ -14,7 +14,8 @@ var slideInterval = setInterval(slideShow, 3000);
 // Set variable to determine if the slideshow is playing. By default the show plays so it will be set to true.
 var showPlaying = true;
 // Declare variables for the control buttons as they will be used in the nextButton, previousButton, resumeButton, and  
-// pauseButton on click event handlers.
+// pauseButton on click event handlers as well as a conditional statement to set their display to inline-block if 
+// JS is enabled.
 var pauseButton = document.querySelector('#pause');
 var resumeButton = document.querySelector('#resume');
 var nextButton = document.querySelector('#next');

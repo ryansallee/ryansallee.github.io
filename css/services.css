@@ -71,7 +71,7 @@ img {
 @media(min-width: 640px) {
     /* Base Styles */
     h2 {
-        margin: 120px auto 0;
+        margin: 92.5px auto 0;
     }
     /* Change the .service-wrap flex direction to row so that there are 2 columns side by side */
     .service-wrap {
@@ -86,7 +86,7 @@ img {
     .lawn-care,
     .landscaping {
         width: 46.25%;
-        margin-bottom: 25%;
+        margin-bottom: 10%;
     }
     /* The floats for img and .service-lists is cleared here since the images can be displayed on larger screens stacked on top of the list */
     img {

@@ -3,11 +3,12 @@ slideNumber = 0;
 w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
 var targetWidth = 640;
 
-var slideInterval = setInterval(slideShow, 1000);
+var slideInterval = setInterval(slideShow, 2000);
 
 var playing = true;
 var pauseButton = document.querySelector('#pause');
 var resumeButton = document.querySelector('#resume');
+var nextButton = document.querySelector('#next');
 
 
 function slideShow() {
@@ -22,6 +23,19 @@ function slideShow() {
             slideNumber = 1;
         }
         slides[slideNumber - 1].style.display = "block";
+        nextButton.onclick = function() {
+            clearInterval(slideInterval);
+            slides[slideNumber - 1].style.display = "none";
+            for (i; i < slides.length; i += 1) {
+                slidesMinus[i].style.display = "none"
+            }
+            slideNumber += 1;
+            if (slideNumber > slides.length) {
+                slideNumber = 1;
+            }
+            slides[slideNumber - 1].style.display = "block";
+            slideInterval = setInterval(slideShow, 2000);
+        }
 
     }
 };
@@ -35,7 +49,7 @@ function stop() {
 
 function resume() {
     if (!playing) {
-        slideInterval = setInterval(slideShow, 1000);
+        slideInterval = setInterval(slideShow, 2000);
         playing = true;
     }
 }
@@ -53,22 +67,18 @@ if (w < targetWidth) {
     document.querySelector('#resume').style.display = "none"
 }
 
-// function showSlides () {
+
+// resumeButton.onclick = function() {
 //     for (i; i < slides.length; i += 1) {
-//         if (i< slides.length) {
-//             i=0;
-//         }
-//         var showSlide = slides[i];
-//         showSlide.style.display = 'block';
-//     }
-// };
+//         clearInterval(slideInterval);
+//         slidesMinus.style.display = "none"
 
-// setTimeout(showSlides(), 2000);
 
-// for (let i = 0; i < slides.length; i += 1) {
-//     var showSlide = slides[i];
-//     showSlide.style.display = "block";
-//     if (i < slides.length) {
-//         i = 0;
 //     }
-// };
+//     slideNumber += 1;
+//     if (slideNumber > slides.length - 1) {
+//         slideNumber = 1;
+//     }
+//     slides[slideNumber].style.display = "none";
+//     slides[slideNumber + 1].style.display = "block";
+// }

@@ -37,7 +37,7 @@ nextButton.onclick = function() {
     // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
     clearInterval(slideInterval);
     // Makes sure the showPlaying variable is set to false if the user clicks the resumeButton resume() can 
-    // called.
+    // be called by the click event handler on resumeButton.
     showPlaying = false;
 };
 
@@ -48,8 +48,8 @@ previousButton.onclick = function() {
     // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
     // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
     clearInterval(slideInterval);
-    // Makes sure the showPlaying variable is set to false if the user clicks the resumeButton resume() can 
-    // called.
+    // Makes sure the showPlaying variable is set to false if the user clicks resumeButton resume() can 
+    // be called by the click event handler on resumeButton
     showPlaying = false;
 };
 

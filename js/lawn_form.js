@@ -13,7 +13,7 @@ var formData = $('form').serialize();
 
 // Declare form tag and button as a jQuery selector variable as it will be used multiple times
 var $form = $('form');
-var $submit = $('input[type="button"]');
+var $submitButton = $('input[type="button"]');
 
 // Declare all the spans except the .telephone span as a variable for the reset function
 var $errorSpans = $(".alertEmail, .alertName, .alertPhone, .alertComment");
@@ -106,7 +106,7 @@ function commentValidate() {
 }
 
 // Start Ajax request upon clicking the submit button.
-$submit.click(function(evt) {
+$submitButton.click(function(evt) {
     // Stop the default behavior of the form so that we can check for validation.
     evt.preventDefault();
     nameValidate();

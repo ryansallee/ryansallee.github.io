@@ -77,39 +77,34 @@ function slideMove(n) {
     slideShow(slideNumber += n);
 };
 
-// On click event handler for the nextButton
-nextButton.onclick = function() {
-    // Pass 1 as the value for the parameter to slideMove function to advance the slide by 1.
-    slideMove(1);
-    // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
-    // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
-    clearInterval(slideInterval);
-    // Makes sure the showPlaying variable is set to false if the user clicks the resumeButton resume() can 
-    // be called by the click event handler on resumeButton.
-    showPlaying = false;
-};
-
-// On click event handler for the previousButton
-previousButton.onclick = function() {
-    // Pass -1 as the value for the parameter to slideMove function to move the slide back 1 slide (advance slide -1).
-    slideMove(-1);
-    // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
-    // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
-    clearInterval(slideInterval);
-    // Makes sure the showPlaying variable is set to false if the user clicks resumeButton resume() can 
-    // be called by the click event handler on resumeButton.
-    showPlaying = false;
-};
-
 // Function to stop the slideshow
 function stop() {
     // Only functions if the showPlaying variable is true.
     if (showPlaying) {
         // Clear the interval to stop the function slideShow.
         clearInterval(slideInterval);
-        // Set the showPlaying variable to false.
+        // Makes sure the showPlaying variable is set to false if the user clicks resumeButton resume() can 
+        // be called by the click event handler on resumeButton.
         showPlaying = false;
     }
+};
+
+// On click event handler for the nextButton
+nextButton.onclick = function() {
+    // Pass 1 as the value for the parameter to slideMove function to advance the slide by 1.
+    slideMove(1);
+    // Call the stop() function to stop the show allow the user to manually control the slideshow without interference
+    // from the automatic slideshow.
+    stop();
+};
+
+// On click event handler for the previousButton
+previousButton.onclick = function() {
+    // Pass -1 as the value for the parameter to slideMove function to move the slide back 1 slide (advance slide -1).
+    slideMove(-1);
+    // Call the stop() function to stop the show allow the user to manually control the slideshow without interference
+    // from the automatic slideshow.
+    stop();
 };
 
 // On click event hander for the pauseButton to call the stop function.

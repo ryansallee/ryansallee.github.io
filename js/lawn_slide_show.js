@@ -22,78 +22,15 @@ var resumeButton = document.querySelector('#resume');
 var nextButton = document.querySelector('#next');
 var previousButton = document.querySelector('#previous');
 
-// Function to be called to manually move the slides with the parameter n to be supplied when the function is called
-// in the nextButton and previousButton click event handlers.
-function slideMove(n) {
-    // Advance the SlideNumber variable by parameter n when the slideMove function is called
-    slideShow(slideNumber += n);
-};
-
-// On click event handler for the nextButton
-nextButton.onclick = function() {
-    // Pass 1 as the value for the parameter to slideMove function to advance the slide by 1
-    slideMove(1);
-    // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
-    // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
-    clearInterval(slideInterval);
-    // Makes sure the showPlaying variable is set to false if the user clicks the resumeButton resume() can 
-    // be called by the click event handler on resumeButton.
-    showPlaying = false;
-};
-
-// On click event handler for the previousButton
-previousButton.onclick = function() {
-    // Pass -1 as the value for the parameter to slideMove function to move the slide back 1 slide (advance slide -1).
-    slideMove(-1);
-    // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
-    // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
-    clearInterval(slideInterval);
-    // Makes sure the showPlaying variable is set to false if the user clicks resumeButton resume() can 
-    // be called by the click event handler on resumeButton
-    showPlaying = false;
-};
-
-// On click event hander for the pauseButton to call the stop function
-pauseButton.onclick = function() {
-    stop();
-};
-
-// On click event hander for the pauseButton to call the resume function
-resumeButton.onclick = function() {
-    resume();
-};
-
-// Function to stop the slideshow
-function stop() {
-    // Only functions if the showPlaying variable is true
-    if (showPlaying) {
-        // Clear the interval to stop the function slideShow
-        clearInterval(slideInterval);
-        // Set the showPlaying variable to false
-        showPlaying = false;
-    }
-};
-
-// Function to restart the slideshow
-function resume() {
-    // Function only executes if the showPlaying variable is false. This can only occur if the user has clicked
-    // the pause button. If this condition was not included, the slideShow function would be sped up. 
-    if (!showPlaying) {
-        // Reset the slideInterval to 3 seconds
-        slideInterval = setInterval(slideShow, 3000);
-        // Set the ShowPlaying variable to true so that the pause button can be used again.
-        showPlaying = true;
-    }
-};
-
 // Function to run the slideshow on window load (since the script is placed at the end of the HTML)
 function slideShow(n) {
-    // Function will only run if the user's viewPortWidth is greater than 640px
+    // Function will only run if the user's viewPortWidth is greater than 640px.
     if (viewPortWidth >= targetWidth) {
-        // Declare variable i as 0 for the for loop
+        // Declare variable i as 0 for the for loop.
         var i = 0;
         // If is undefined (since the parameter n is defined only when the user calls the slideMove function), 
-        // n is set to slideNumber incremented by 1 with the ++ operator
+        // n is set to slideNumber incremented by 1 with the ++ operator so that the following conditions can be
+        // evaluated.
         if (n == undefined) {
             n = ++slideNumber;
         }
@@ -132,4 +69,68 @@ function showButtons() {
 
 // // Call showButtons function to display the control buttons.
 showButtons();
+
+// Function to be called to manually move the slides with the parameter n to be supplied when the function is called
+// in the nextButton and previousButton click event handlers.
+function slideMove(n) {
+    // Advance the SlideNumber variable by parameter n when the slideMove function is called.
+    slideShow(slideNumber += n);
+};
+
+// On click event handler for the nextButton
+nextButton.onclick = function() {
+    // Pass 1 as the value for the parameter to slideMove function to advance the slide by 1.
+    slideMove(1);
+    // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
+    // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
+    clearInterval(slideInterval);
+    // Makes sure the showPlaying variable is set to false if the user clicks the resumeButton resume() can 
+    // be called by the click event handler on resumeButton.
+    showPlaying = false;
+};
+
+// On click event handler for the previousButton
+previousButton.onclick = function() {
+    // Pass -1 as the value for the parameter to slideMove function to move the slide back 1 slide (advance slide -1).
+    slideMove(-1);
+    // Clear interval so that new slide does not jump slides if the user clicks the next button at the end
+    // of the interval of 3 seconds. As well, the slideshow will stop automatically playing.
+    clearInterval(slideInterval);
+    // Makes sure the showPlaying variable is set to false if the user clicks resumeButton resume() can 
+    // be called by the click event handler on resumeButton.
+    showPlaying = false;
+};
+
+// Function to stop the slideshow
+function stop() {
+    // Only functions if the showPlaying variable is true.
+    if (showPlaying) {
+        // Clear the interval to stop the function slideShow.
+        clearInterval(slideInterval);
+        // Set the showPlaying variable to false.
+        showPlaying = false;
+    }
+};
+
+// On click event hander for the pauseButton to call the stop function.
+pauseButton.onclick = function() {
+    stop();
+};
+
+// On click event hander for the pauseButton to call the resume function.
+resumeButton.onclick = function() {
+    resume();
+};
+
+// Function to restart the slideshow.
+function resume() {
+    // Function only executes if the showPlaying variable is false. This can only occur if the user has clicked
+    // the pause button. If this condition was not included, the slideShow function would be sped up. 
+    if (!showPlaying) {
+        // Reset the slideInterval to 3 seconds.
+        slideInterval = setInterval(slideShow, 3000);
+        // Set the ShowPlaying variable to true so that the pause button can be used again.
+        showPlaying = true;
+    }
+};
 // End of of Script

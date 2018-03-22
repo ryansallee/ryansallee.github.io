@@ -67,7 +67,7 @@ function showButtons() {
     }
 };
 
-// // Call showButtons function to display the control buttons.
+// Call showButtons function to display the control buttons.
 showButtons();
 
 // Function to be called to manually move the slides with the parameter n to be supplied when the function is called
@@ -94,7 +94,9 @@ nextButton.onclick = function() {
     // Pass 1 as the value for the parameter to slideMove function to advance the slide by 1.
     slideMove(1);
     // Call the stop() function to stop the show allow the user to manually control the slideshow without interference
-    // from the automatic slideshow.
+    // from the automatic slideshow. After the nextButton or previousButton is clicked for the first time, stop() will
+    // not execute since showPlaying = false, but the interval will have been cleared by the first click of the nextButton
+    // or previousButton while the slideshow is playing (either on page load or after a click on resumeButton)
     stop();
 };
 
@@ -103,7 +105,9 @@ previousButton.onclick = function() {
     // Pass -1 as the value for the parameter to slideMove function to move the slide back 1 slide (advance slide -1).
     slideMove(-1);
     // Call the stop() function to stop the show allow the user to manually control the slideshow without interference
-    // from the automatic slideshow.
+    // from the automatic slideshow. After the nextButton or previousButton is clicked for the first time, stop() will
+    // not execute since showPlaying = false, but the interval will have been cleared by the first click of the nextButton
+    // or previousButton while the slideshow is playing (either on page load or after a click on resumeButton).
     stop();
 };
 

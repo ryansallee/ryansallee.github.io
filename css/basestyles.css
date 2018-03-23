@@ -83,12 +83,6 @@ header {
     margin-right: 3px;
 }
 
-.AboutUs::before {
-    content: url(../img/about_us.svg);
-    margin-right: 3px;
-    display: inline-block;
-}
-
 .leaf::before {
     content: url(../img/leaf.svg);
     margin-right: 3px;

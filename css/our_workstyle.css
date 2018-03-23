@@ -43,8 +43,16 @@ figcaption {
     footer {
         max-height: 100px;
     }
+    #previous {
+        float: left;
+        margin-right: 10px;
+    }
+    #next {
+        float: right;
+    }
     #resume {
         float: right;
+        margin-right: 10px;
     }
     button {
         border-radius: 5px;

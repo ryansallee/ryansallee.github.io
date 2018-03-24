@@ -21,19 +21,7 @@ function slideDisplayed(n) {
     slideShow(slideNumber = n);
 }
 
-function stop() {
-    if (playing) {
-        clearInterval(slideInterval);
-        playing = false;
-    }
-}
 
-function resume() {
-    if (!playing) {
-        slideInterval = setInterval(slideShow, 2000);
-        playing = true;
-    }
-}
 
 
 function slideShow(n) {
@@ -77,6 +65,20 @@ pauseButton.onclick = function() {
 
 resumeButton.onclick = function() {
     resume();
+}
+
+function stop() {
+    if (playing) {
+        clearInterval(slideInterval);
+        playing = false;
+    }
+}
+
+function resume() {
+    if (!playing) {
+        slideInterval = setInterval(slideShow, 2000);
+        playing = true;
+    }
 }
 
 if (w >= targetWidth) {

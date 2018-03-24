@@ -114,11 +114,12 @@ header {
 .foot-name {
     display: flex;
     flex: 1 0 auto;
+    align-items: center;
 }
 
 .footer {
     background-color: rgb(175, 174, 174);
-    text-align: center;
+    /* text-align: center; */
     flex-direction: column;
 }
 

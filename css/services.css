@@ -1,0 +1,83 @@
+.service-wrap {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin: 5px 0 5px 0;
+}
+
+.lawn-care,
+.landscaping {
+    background-color: white;
+    border-radius: 25px;
+    width: 97.5%;
+    margin: 10px auto 10px auto;
+    box-shadow: 5px 5px 5px rgb(113, 119, 119);
+    padding-bottom: 10px;
+}
+
+img {
+    display: block;
+    box-shadow: 5px 5px 5px rgb(113, 119, 119);
+    max-height: 25%;
+    max-width: 25%;
+    border-radius: 5px;
+    margin-left: 20px;
+    float: left;
+}
+
+.service-lists {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 2.2;
+    float: right;
+    margin-right: 20px;
+}
+
+@media(min-width: 640px) {
+    h2 {
+        margin: 90px 0 0;
+    }
+    .lawn-care h2,
+    .landscaping h2 {
+        margin-top: 5px;
+    }
+    .service-wrap {
+        flex-direction: row;
+        margin-top: -5px;
+        align-items: center;
+    }
+    .lawn-care,
+    .landscaping {
+        width: 46.25%;
+    }
+    img {
+        max-width: 45%;
+        max-height: 45%;
+        float: none;
+        margin: 0 auto 0 auto;
+        margin-top: 5px;
+    }
+    .service-lists {
+        text-align: center;
+        float: none;
+        margin: 0;
+    }
+}
+
+@media(min-width: 1024px) {
+    h2 {
+        margin: 72px 0 0;
+    }
+    .lawn-care,
+    .landscaping {
+        width: 45%;
+    }
+    img {
+        max-width: 40%;
+        max-height: 40%;
+    }
+}

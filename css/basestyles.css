@@ -119,7 +119,6 @@ header {
 
 .footer {
     background-color: rgb(175, 174, 174);
-    /* text-align: center; */
     flex-direction: column;
 }
 
@@ -206,6 +205,8 @@ a[href^="mailto:n"]::before {
 
 @media (min-width: 1024px) {
     /*Nav Bar */
+    /* The flex direction of the main-header will be row so that the <h1> and <li> in .main-nav will display horizontally
+    rather than the <h1> stacked on top of the navigation links as in the Tablet media queries */
     .main-header {
         flex-direction: row;
         justify-content: space-between;

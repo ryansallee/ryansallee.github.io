@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
-    <title>Lawn Paynes</title>
+    <title>Contact</title>
     <!-- The format detection will ensure Edge does not try to allow the telephone number to launch Skype or other phone programs -->
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#218021">
+    <!-- CSS stylesheets for the page -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/basestyles.css">
     <link rel="stylesheet" href="css/contact.css">
+    <!-- This is the reference to use the Fjalla One font for <h1> and <h3> tags that contain the name of the business   -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 
 <body>
-
-
+    <!-- Header with nav bar. -->
     <header>
         <div class="main-header">
             <h1 class="name"><a href="index.html">Lawn Paynes</a></h1>
@@ -28,15 +29,18 @@
         </div>
     </header>
 
+    <!-- The contactForm div will contain a contact form to be sent via a jQuery AJAX request and to validate the inputs -->
     <div class="contactForm">
         <form>
             <h2>Contact Us!</h2>
             <p> Complete the form below and we will contact you!</p>
+            <!-- The errorAlert span will contain an error message inserted by the AJAX request if there is a server error -->
             <span class="errorAlert"></span>
             <div class='inputs'>
                 <label for="Name"><span class=asterisk>*</span>Name:</label>
                 <br>
                 <input type="text" id="name" name="name" placeholder="Your Name" autofocus>
+                <!-- The alert spans after each input will contain an error message inserted by the script if they are empty or do not match the format requested for each input -->
                 <span class="alertName"></span>
                 <br>
                 <label for="mail"><span class=asterisk>*</span>Email:</label>
@@ -70,6 +74,7 @@
                 <span class="alertComment"></span>
                 <br>
             </div>
+            <!-- Buttons to submit the contact form or reset their inputs -->
             <div class='buttons'>
                 <input type="reset">
                 <input type="button" value="Submit">
@@ -89,7 +94,9 @@
             <p class="disclaimer "> The resemblence of this site to any actual businesses is purely coincidental.</p>
         </div>
     </footer>
+    <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Script to validate the inputs as well as submit the form data via AJAX -->
     <script src="js/lawn_form.js"></script>
 </body>
 

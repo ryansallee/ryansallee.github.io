@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-    <title>Lawn Paynes</title>
+    <title>Our Work</title>
     <!-- The format detection will ensure Edge does not try to allow the telephone number to launch Skype or other phone programs -->
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#218021">
+    <!-- CSS stylesheets for the page -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/basestyles.css">
     <link rel="stylesheet" href="css/our_workstyle.css">
+    <!-- This is the reference to use the Fjalla One font for <h1> and <h3> tags that contain the name of the business   -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 
@@ -28,43 +30,32 @@
         </div>
     </header>
 
-
+    <!-- This div will be manipulated on viewports 640px and wider by lawn_slide_show.js script for a slideshow -->
     <div class="slide-container">
-
-
         <div class="slides">
-
             <img src="../img/Landscaping_1.JPG">
             <figcaption>Edging</figcaption>
-
-
         </div>
 
         <div class="slides">
-
             <img src="../img/Landscaping_2.JPG">
             <figcaption>Freshly manicured lawn!</figcaption>
-
-
         </div>
 
         <div class="slides">
-
             <img src="../img/Landscaping_3.JPG">
             <figcaption>Keeping the lawn maintained!</figcaption>
-
         </div>
 
         <div class="slides ">
             <img src="../img/Landscaping_4.JPG">
             <figcaption>Heart flower arrangement!</figcaption>
         </div>
-
+        <!-- Slideshow buttons to advance slides manually back and forth as well as pause and resume the show -->
         <button id="previous"> &lt; </button>
         <button id="pause">Pause</button>
         <button id="next"> &gt; </button>
         <button id="resume">Resume</button>
-
     </div>
 
 
@@ -72,7 +63,6 @@
     <footer class="footer">
         <h3 class="foot-name">Lawn Paynes</h3>
         <div class="foot-nav">
-
             <a href="mailto:notarealemailaddress@gmail.com">Email Us!</a>
             <span id="telephone">(502) 111-1111</span>
             <a href="index.html">Home</a> <br>
@@ -80,6 +70,7 @@
             <p class="disclaimer"> The resemblence of this site to any actual businesses is purely coincidental.</p>
         </div>
     </footer>
+    <!-- Script containing the code for the slideshow -->
     <script src="../js/lawn_slide_show.js"></script>
 </body>
 

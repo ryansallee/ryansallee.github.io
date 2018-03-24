@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-    <title>Lawn Paynes</title>
+    <title>Services</title>
     <!-- The format detection will ensure Edge does not try to allow the telephone number to launch Skype or other phone programs -->
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#218021">
+    <!-- CSS stylesheets for the page -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/basestyles.css">
     <link rel="stylesheet" href="css/services.css">
+    <!-- This is the reference to use the Fjalla One font for <h1> and <h3> tags that contain the name of the business   -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 
@@ -27,8 +29,12 @@
             </ul>
         </div>
     </header>
+
+
     <h2> Services</h2>
+    <!-- Wrapper Container for the lawn-care and landscaping divs -->
     <div class="service-wrap">
+        <!-- Div to be targeted by the services_fadein.js div so that it fades in upon page load -->
         <div class="lawn-care">
             <h2>Lawn Care Services</h2>
             <img title="A well maintained lawn" src="../img/Lawn_Care.jpg">
@@ -40,6 +46,7 @@
             </ul>
         </div>
 
+        <!-- Div to be targeted by the services_fadein.js div so that it fades in upon page load -->
         <div class="landscaping">
             <h2>Landscaping Services</h2>
             <img title="An edged flower bed" src="../img/Edging.jpg">
@@ -56,7 +63,6 @@
     <footer class="footer">
         <h3 class="foot-name">Lawn Paynes</h3>
         <div class="foot-nav">
-
             <a href="mailto:notarealemailaddress@gmail.com">Email Us!</a>
             <span id="telephone">(502) 111-1111</span>
             <a href="index.html">Home</a> <br>
@@ -64,7 +70,9 @@
             <p class="disclaimer"> The resemblence of this site to any actual businesses is purely coincidental.</p>
         </div>
     </footer>
+    <!-- Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery script to fade in the lawn-care and landscaping divs -->
     <script src='js/services_fadein.js'></script>
 </body>
 

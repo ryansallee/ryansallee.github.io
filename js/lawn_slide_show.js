@@ -1,37 +1,42 @@
+// // This script's purpose is to create a slideshow feature on the our_work.html page that only runs
+// on viewports 640px or wider that has functional next, previous, pause and resume buttons. It also 
+// overrides CSS to make sure that controls and the slides for the slideshow are displayed.
+
+// Declare variable to select all of the .slides divs.
 var slides = document.querySelectorAll('.slides');
-slideNumber = 0;
-w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+// Declare variable to keep a counter of the .slides divs
+var slideNumber = 0;
+// Set variables to detect the viewport width and to set the minimum width for the slideShow function to apply
+var viewPortWidth = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
 var targetWidth = 640;
-
-var slideShowArrayLength = slides.length - 1
-
+// Set variable for the interval for the slides to advance every 2 seconds
 var slideInterval = setInterval(slideShow, 2000);
-
-var playing = true;
+// Set variable to determine if the slideshow is playing. By default the show plays so it will be set to true.
+var showPlaying = true;
+// Declare variables for the control buttons as they will be used several times
 var pauseButton = document.querySelector('#pause');
 var resumeButton = document.querySelector('#resume');
 var nextButton = document.querySelector('#next');
 var previousButton = document.querySelector('#previous');
 
+// Function to be called to manually move the slides with the parameter n to be supplied when the function is called
 function slideMove(n) {
     slideShow(slideNumber += n);
 }
 
+// 
 function slideDisplayed(n) {
     slideShow(slideNumber = n);
 }
 
-
-
-
 function slideShow(n) {
 
-    if (w >= targetWidth) {
+    if (viewPortWidth >= targetWidth) {
         var i = 0;
         if (n == undefined) {
             n = ++slideNumber;
         }
-        if (n > slideShowArrayLength) {
+        if (n > slides.length - 1) {
             slideNumber = 0;
         }
         if (n < 0) {
@@ -68,20 +73,20 @@ resumeButton.onclick = function() {
 }
 
 function stop() {
-    if (playing) {
+    if (showPlaying) {
         clearInterval(slideInterval);
-        playing = false;
+        showPlaying = false;
     }
 }
 
 function resume() {
-    if (!playing) {
+    if (!showPlaying) {
         slideInterval = setInterval(slideShow, 2000);
-        playing = true;
+        showPlaying = true;
     }
 }
 
-if (w >= targetWidth) {
+if (viewPortWidth >= targetWidth) {
     pauseButton.style.display = "inline-block";
     resumeButton.style.display = "inline-block";
     previousButton.style.display = "inline-block";

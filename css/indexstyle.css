@@ -24,7 +24,7 @@ with flex due to a bug with IE in respect to flex, the flex 1 0 auto is used. */
 }
 
 
-/*---Main Content---*/
+/*---Main Content Styles---*/
 
 .main-content {
     background: white;
@@ -68,7 +68,7 @@ img[src^="../img/fro"] {
         margin-top: 97.5px;
         padding: 0 25px;
     }
-    /* Content Styles  */
+    /* Main Content Styles  */
     .main-content {
         width: 95%;
         margin: 12.5px auto 30px auto;

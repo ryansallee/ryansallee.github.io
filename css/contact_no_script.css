@@ -1,0 +1,6 @@
+/* This style sheet is embedded in the <noscript> tag in the head so that first <p> tag that is the second child
+(so only the p tag on line 37 of contact.html) will hide if JavaScript is disabled. */
+
+p:nth-child(2) {
+    display: none;
+}

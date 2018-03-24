@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/basestyles.css">
     <link rel="stylesheet" href="css/contact.css">
+    <noscript><link rel="stylesheet" href="css/contact_no_script.css"></noscript>
     <!-- This is the reference to use the Fjalla One font for <h1> and <h3> tags that contain the name of the business   -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
@@ -34,6 +35,10 @@
         <form>
             <h2>Contact Us!</h2>
             <p> Complete the form below and we will contact you!</p>
+            <!-- This <p> tag that is the child of noscript will display if JavaScript is disabled -->
+            <noscript>
+                <p>JavaScript is disabled. Please enable JavaScript and reload the page so that you can submit the form! Thank you!</p>
+            </noscript>
             <!-- The errorAlert span will contain an error message inserted by the AJAX request if there is a server error -->
             <span class="errorAlert"></span>
             <div class='inputs'>

@@ -1,0 +1,8 @@
+        /* This style sheet is embedded in the <noscript> tag so that all of the .slides will display
+if JavaScript is disabled as the our_workstyle.css sets the display of all slides but the first to none
+if the viewport is 640px or larger */
+    
+    @media (min-width: 640px) {
+        .slides:nth-of-type(1n+2) {
+            display: block;
+        }

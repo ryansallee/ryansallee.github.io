@@ -40,6 +40,10 @@ figcaption {
     margin-top: 1px;
 }
 
+button {
+    display: none;
+}
+
 @media (min-width: 640px) {
     /* Limit the width of the slide container and give margin down from the header */
     .slide-container {

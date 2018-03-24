@@ -4,6 +4,7 @@ w = document.documentElement.clientWidth || document.body.clientWidth || window.
 var targetWidth = 640;
 
 var slideShowArrayLength = slides.length - 1
+
 var slideInterval = setInterval(slideShow, 2000);
 
 var playing = true;
@@ -18,6 +19,20 @@ function slideMove(n) {
 
 function slideDisplayed(n) {
     slideShow(slideNumber = n);
+}
+
+function stop() {
+    if (playing) {
+        clearInterval(slideInterval);
+        playing = false;
+    }
+}
+
+function resume() {
+    if (!playing) {
+        slideInterval = setInterval(slideShow, 2000);
+        playing = true;
+    }
 }
 
 
@@ -55,19 +70,6 @@ previousButton.onclick = function() {
     slideInterval = setInterval(slideShow, 2000);
 }
 
-function stop() {
-    if (playing) {
-        clearInterval(slideInterval);
-        playing = false;
-    }
-}
-
-function resume() {
-    if (!playing) {
-        slideInterval = setInterval(slideShow, 2000);
-        playing = true;
-    }
-}
 
 pauseButton.onclick = function() {
     stop();
@@ -77,9 +79,9 @@ resumeButton.onclick = function() {
     resume();
 }
 
-if (w < targetWidth) {
-    pauseButton.style.display = "none";
-    resumeButton.style.display = "none";
-    previousButton.style.display = "none";
-    nextButton.style.display = "none";
+if (w >= targetWidth) {
+    pauseButton.style.display = "inline-block";
+    resumeButton.style.display = "inline-block";
+    previousButton.style.display = "inline-block";
+    nextButton.style.display = "inline-block";
 }

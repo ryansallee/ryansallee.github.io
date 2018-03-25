@@ -71,7 +71,6 @@ img {
     /* Change the .service-wrap flex direction to row so that there are 2 columns side by side */
     .service-wrap {
         flex-direction: row;
-        margin-top: -5%;
         align-items: center;
     }
     /* Content Styles */
@@ -104,6 +103,7 @@ img {
     .service-wrap {
         margin-top: -5px;
     }
+    /* Content Styles */
     .lawn-care,
     .landscaping {
         width: 45%;

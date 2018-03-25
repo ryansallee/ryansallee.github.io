@@ -26,8 +26,8 @@ small screens, but there is some white space for visibility */
 
 img {
     display: block;
-    max-width: 75%;
-    max-height: 75%;
+    max-width: 70%;
+    max-height: 70%;
     border-radius: 5px;
     margin: 10px auto;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);

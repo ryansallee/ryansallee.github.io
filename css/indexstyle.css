@@ -67,6 +67,7 @@ img[src^="../img/fro"] {
 @media (min-width: 640px) {
     /* Alert Styles */
     #alert {
+        width: 95%;
         margin-top: 117.5px;
         padding: 0 25px;
     }

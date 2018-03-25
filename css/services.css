@@ -1,13 +1,31 @@
+/* Base Styles */
+
+h2 {
+    text-align: center;
+    margin: 5px 0 5px 0;
+}
+
+.body-title {
+    font-size: 1.6em;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    padding: 0 5px;
+    border: 1px;
+}
+
+
+/* Flex the service-wrap divs and set their flex directon to column on small screens */
+
 .service-wrap {
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
 }
 
-h2 {
-    text-align: center;
-    margin: 5px 0 5px 0;
-}
+
+/* Content Styles */
 
 .lawn-care,
 .landscaping {
@@ -18,6 +36,9 @@ h2 {
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
     padding-bottom: 10px;
 }
+
+
+/* In the img */
 
 img {
     display: block;
@@ -37,18 +58,26 @@ img {
     margin-right: 20px;
 }
 
+
+/* Media Queries */
+
+
+/* Tablet */
+
 @media(min-width: 640px) {
     h2 {
         margin: 90px 0 0;
     }
-    .lawn-care h2,
-    .landscaping h2 {
-        margin-top: 5px;
-    }
+    /* Change the .service-wrap flex direction to row so that there are 2 columns side by side */
     .service-wrap {
         flex-direction: row;
         margin-top: -5px;
         align-items: center;
+    }
+    /* Content Styles */
+    .lawn-care h2,
+    .landscaping h2 {
+        margin-top: 5px;
     }
     .lawn-care,
     .landscaping {

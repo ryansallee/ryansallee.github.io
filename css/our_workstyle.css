@@ -26,8 +26,8 @@ small screens, but there is some white space for visibility */
 
 img {
     display: block;
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 75%;
+    max-height: 75%;
     border-radius: 5px;
     margin: 10px auto;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
@@ -50,7 +50,7 @@ button {
     .slide-container {
         margin: 97.5px auto 10px auto;
         padding: 10px 20px 3px 20px;
-        width: 85%;
+        width: 75%;
     }
     /* Ensures that the images fill the .slide divs and remove the margins from the base styles */
     img {

@@ -16,7 +16,7 @@ h2 {
 }
 
 
-/* Flex the service-wrap divs and set their flex directon to column on small screens */
+/* Flex the service-wrap divs and set their flex directon to column on small screens to stack them on top of one another */
 
 .service-wrap {
     display: flex;
@@ -38,7 +38,8 @@ h2 {
 }
 
 
-/* In the img */
+/* In the img selctor the height and width of the images are limited to 30% of the .lawn-care and .landscaping
+containers so that the images do not display the list that are floated right*/
 
 img {
     display: block;
@@ -66,7 +67,7 @@ img {
 
 @media(min-width: 640px) {
     h2 {
-        margin: 100px auto 0;
+        margin: 120px auto 0;
     }
     /* Change the .service-wrap flex direction to row so that there are 2 columns side by side */
     .service-wrap {
@@ -82,9 +83,10 @@ img {
     .landscaping {
         width: 46.25%;
     }
+    /* The floats for img and .service-lists is cleared here since the images can be displayed on larger screens stacked on top of the list */
     img {
         max-width: 90%;
-        max-height: 00%;
+        max-height: 90%;
         float: none;
         margin: 0 auto 0 auto;
         margin-top: 5px;

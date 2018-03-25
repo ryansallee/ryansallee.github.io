@@ -244,13 +244,11 @@ a[href^="mailto:n"]::before {
 }
 
 
-/* IE 10 + For .main-nav display issues */
+/* /* IE 10 + For .main-nav display issues  */
 
 
-/* Before there were flex issues on the main-nav that is known to IE, a media query is used */
-
-
-/* so that the navigation items are centered in the header. */
+/* Before there were flex issues on the main-nav that is known to IE, a media query is used 
+so that the navigation items are centered in the header. */
 
 @media all and (-ms-high-contrast: none) and (min-width: 1024px),
 (-ms-high-contrast: active) and (min-width: 1024px) {

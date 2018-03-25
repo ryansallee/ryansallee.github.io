@@ -67,19 +67,23 @@ img[src^="../img/fro"] {
 @media (min-width: 640px) {
     /* Alert Styles */
     #alert {
-        margin-top: 97.5px;
+        margin-top: 117.5px;
         padding: 0 25px;
     }
     /* Main Content Styles  */
     .main-content {
         width: 95%;
-        margin: 12.5px auto 55% auto;
+        margin: 32.5px auto 55% auto;
     }
     .intro-container {
         width: 92.5%;
     }
     img[src^="../img/fro"] {
         width: 55%;
+    }
+    /* Footer Styles */
+    .footer {
+        margin-top: -10%;
     }
 }
 
@@ -99,5 +103,9 @@ img[src^="../img/fro"] {
     }
     img[src^="../img/fro"] {
         width: 40%;
+    }
+    /* Footer Styles */
+    .footer {
+        margin-top: 0;
     }
 }

@@ -66,12 +66,12 @@ img {
 
 @media(min-width: 640px) {
     h2 {
-        margin: 90px 0 0;
+        margin: 100px auto 0;
     }
     /* Change the .service-wrap flex direction to row so that there are 2 columns side by side */
     .service-wrap {
         flex-direction: row;
-        margin-top: -5px;
+        margin-top: -5%;
         align-items: center;
     }
     /* Content Styles */
@@ -84,8 +84,8 @@ img {
         width: 46.25%;
     }
     img {
-        max-width: 45%;
-        max-height: 45%;
+        max-width: 90%;
+        max-height: 00%;
         float: none;
         margin: 0 auto 0 auto;
         margin-top: 5px;
@@ -97,9 +97,12 @@ img {
     }
 }
 
-@media(min-width: 1024px) {
+@media(min-width: 1025px) {
     h2 {
-        margin: 72px 0 0;
+        margin: 72px auto 0;
+    }
+    .service-wrap {
+        margin-top: -5px;
     }
     .lawn-care,
     .landscaping {

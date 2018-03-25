@@ -17,6 +17,7 @@ the images in the slide container are flexed with the default flex direction and
     margin: 10px auto;
     border-radius: 25px;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
+    justify-content: center;
 }
 
 
@@ -49,13 +50,13 @@ button {
     .slide-container {
         margin: 97.5px auto 10px auto;
         padding: 10px 20px 3px 20px;
-        width: 34%;
+        width: 85%;
     }
     /* Ensures that the images fill the .slide divs and remove the margins from the base styles */
     img {
         max-width: 100%;
         max-height: 100%;
-        margin: 0;
+        margin: auto 0 auto;
         box-shadow: none;
     }
     /* Hide all of the images exept the first so that the first .slide div displays on page load  */
@@ -91,7 +92,7 @@ button {
 
 /* Desktop and Laptop */
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     /* Decrease the width of the .slide-container further so that the .slide-container can be completely seen on a large viewport
     without scrolling. */
     .slide-container {

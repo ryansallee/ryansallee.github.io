@@ -118,7 +118,7 @@ fieldset {
 @media (min-width: 640px) {
     .contactForm {
         width: 95%;
-        margin-top: 97.5px;
+        margin: 97.5px auto 30%;
     }
     .inputs,
     .checks {
@@ -133,10 +133,10 @@ fieldset {
 
 /* Desktop and Laptop */
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .contactForm {
         width: 92.5%;
-        margin-top: 72px;
+        margin: 72px auto 10px;
     }
     .inputs,
     .checks {

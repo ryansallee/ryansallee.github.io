@@ -32,6 +32,7 @@ with flex due to a bug with IE in respect to flex, the flex 1 0 auto is used. */
     margin: 10px auto;
     border-radius: 25px;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
+    justify-content: space-around;
 }
 
 .main-content a {
@@ -42,6 +43,7 @@ with flex due to a bug with IE in respect to flex, the flex 1 0 auto is used. */
 .intro-container {
     width: 90%;
     margin: 0 auto;
+    align-content: space-around;
 }
 
 h2 {
@@ -71,18 +73,17 @@ img[src^="../img/fro"] {
     /* Main Content Styles  */
     .main-content {
         width: 95%;
-        margin: 12.5px auto 30px auto;
-        padding: 7.5px 0 20px 0;
+        margin: 12.5px auto 55% auto;
     }
     .intro-container {
         width: 92.5%;
     }
     img[src^="../img/fro"] {
-        width: 45%;
+        width: 55%;
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     /* Alert Styles */
     #alert {
         margin-top: 72px;

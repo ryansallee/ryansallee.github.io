@@ -120,6 +120,7 @@ header {
 .footer {
     background-color: rgb(175, 174, 174);
     flex-direction: column;
+    max-height: 100px;
 }
 
 .foot-name {
@@ -203,7 +204,7 @@ a[href^="mailto:n"]::before {
 
 /* Desktop and Laptop */
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     /*Nav Bar */
     /* The flex direction of the main-header will be row so that the <h1> and <li> in .main-nav will display horizontally
     rather than the <h1> stacked on top of the navigation links as in the Tablet media queries */

@@ -38,6 +38,7 @@ with flex due to a bug with IE in respect to flex, the flex 1 0 auto is used. */
     border-radius: 25px;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
     justify-content: space-around;
+    padding-bottom: 10px;
 }
 
 .main-content a {

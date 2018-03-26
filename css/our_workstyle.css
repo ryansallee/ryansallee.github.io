@@ -14,7 +14,7 @@ the images in the slide container are flexed with the default flex direction and
     flex: 1 0 auto;
     background: linear-gradient(180deg, white, rgb(76, 191, 236));
     width: 97.5%;
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 25px;
     box-shadow: 5px 5px 5px rgb(113, 119, 119);
     justify-content: center;

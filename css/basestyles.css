@@ -120,7 +120,6 @@ header {
 .footer {
     background-color: rgb(175, 174, 174);
     flex-direction: column;
-    max-height: 100px;
 }
 
 .foot-name {
@@ -198,6 +197,10 @@ a[href^="mailto:n"]::before {
         border-radius: 100px 100px;
         border: white .25px solid;
         margin: 0 10px;
+    }
+    /* Footer Styles */
+    .footer {
+        max-height: 100px;
     }
 }
 

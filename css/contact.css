@@ -118,7 +118,7 @@ fieldset {
 @media (min-width: 640px) {
     .contactForm {
         width: 95%;
-        margin: 97.5px auto 30%;
+        margin: 97.5px auto 35%;
     }
     .inputs,
     .checks {

@@ -18,12 +18,13 @@ SpringDate = SpringDate.getTime();
 var beginSummerDate = new Date(2018, 05, 21);
 beginSummerDate = beginSummerDate.getTime();
 
+displayMessage();
+
 // Function to display Dates
-// Starts immediately with window.onload
-window.onload = function() {
+function displayMessage() {
     // Set Up Variables to Display Messages
     var beforeSpringMessage = "<p><strong>Spring is coming! <a href='#telephone'> Call us</a> now to get your Lawn Paynes solved!<strong></p>";
-    var beforeSummerMessage = " <p><strong>Spring is here! <a href='#telephone'> Call us</a> now before your Lawn Paynes are out of control!<strong></p>"
+    var beforeSummerMessage = "<p><strong>Spring is here! <a href='#telephone'> Call us</a> now before your Lawn Paynes are out of control!<strong></p>"
         // Select the Alert Div to insert messages
     var div = document.querySelector("#alert")
         // Test Condition to make sure it is before spring. If so, insert the beforeSpringMessage.
@@ -36,12 +37,5 @@ window.onload = function() {
         div.innerHTML = beforeSummerMessage;
         div.style.background = "rgb(239, 52, 34)";
     }
-    // Set Styles for the div and text
-    div.style.borderRadius = "100px";
-    var alertText = document.querySelector("#alert p")
-    alertText.style.textAlign = "center";
-    alertText.style.color = "white";
-
 };
-
 // End of Script

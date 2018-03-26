@@ -16,11 +16,16 @@ with flex due to a bug with IE in respect to flex, the flex 1 0 auto is used. */
 /* This will set the style for the #alert div that will be supplied content byt the spring.js script */
 
 #alert {
-    margin-top: 10px;
+    margin: 10px auto 0 auto;
     box-shadow: 5px 5px 5px rgb(104, 109, 109);
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 10px;
+    border-radius: 100px;
+    text-align: center;
+    color: white;
+}
+
+#alert p {
+    margin-right: 1%;
+    margin-left: 1%;
 }
 
 
@@ -69,7 +74,6 @@ img[src^="../img/fro"] {
     #alert {
         width: 95%;
         margin-top: 117.5px;
-        padding: 0 25px;
     }
     /* Main Content Styles  */
     .main-content {
@@ -91,6 +95,7 @@ img[src^="../img/fro"] {
 @media (min-width: 1025px) {
     /* Alert Styles */
     #alert {
+        width: 92.5%;
         margin-top: 72px;
     }
     /* Content Styles */

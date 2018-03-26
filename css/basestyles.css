@@ -199,9 +199,9 @@ a[href^="mailto:n"]::before {
         margin: 0 10px;
     }
     /* Footer Styles */
-    .footer {
+    /* .footer {
         max-height: 100px;
-    }
+    } */
 }
 
 

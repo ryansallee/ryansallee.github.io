@@ -86,6 +86,7 @@ img {
     .lawn-care,
     .landscaping {
         width: 46.25%;
+        margin-bottom: 25%;
     }
     /* The floats for img and .service-lists is cleared here since the images can be displayed on larger screens stacked on top of the list */
     img {
@@ -114,6 +115,7 @@ img {
     .lawn-care,
     .landscaping {
         width: 45%;
+        margin: 10px auto 10px auto;
     }
     img {
         max-width: 40%;

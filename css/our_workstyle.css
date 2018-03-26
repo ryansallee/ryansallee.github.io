@@ -1,10 +1,7 @@
 /* Our_Work Styles */
 
 
-/* Base Styles */
-
-
-/* Slideshow Container */
+/* Slideshow Styles */
 
 
 /* Since the lawn_slide_show.js file will not execute any slideshow on viewports less than 640px in width
@@ -46,6 +43,7 @@ button {
 }
 
 @media (min-width: 640px) {
+    /* Slideshow Styles */
     /* Limit the width of the slide container and give margin down from the header */
     .slide-container {
         margin: 97.5px auto 10px auto;
@@ -63,9 +61,6 @@ button {
     .slides:nth-of-type(1n+2) {
         display: none;
     }
-    footer {
-        max-height: 100px;
-    }
     /* Float the control buttons and give space between with margin */
     #previous {
         float: left;
@@ -78,6 +73,7 @@ button {
         float: right;
         margin-right: 10px;
     }
+    /* Style and make sure that the control buttons display on tablet sized screens and larger */
     button {
         border-radius: 5px;
         background-color: rgb(33, 128, 33);

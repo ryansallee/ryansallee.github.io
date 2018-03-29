@@ -7,11 +7,6 @@ body {
     background: linear-gradient(0deg, white, rgb(33, 128, 33));
 }
 
-#spring-alert,
-.main-content {
-    flex: 1;
-}
-
 
 /* Font Styling */
 
@@ -103,17 +98,6 @@ header {
 }
 
 
-/* Message */
-
-#alert {
-    margin-top: 10px;
-    box-shadow: 5px 5px 5px rgb(104, 109, 109);
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 10px;
-}
-
-
 /* Footer */
 
 .footer,
@@ -133,7 +117,8 @@ header {
     flex-direction: row;
 }
 
-.ryan {
+.ryan,
+.disclaimer {
     font-size: .5em;
 }
 
@@ -156,22 +141,6 @@ a[href^="mailto:l"]::before {
     content: url(../img/foot_home.svg);
     margin-right: 2px;
     display: inline-block;
-}
-
-
-/*---Main Content---*/
-
-.main-content {
-    background: white;
-    width: 97.5%;
-    margin: 10px auto;
-    border-radius: 25px;
-    box-shadow: 5px 5px 5px rgb(113, 119, 119);
-}
-
-.intro-container {
-    width: 90%;
-    margin: 0 auto;
 }
 
 
@@ -214,20 +183,10 @@ a[href^="mailto:l"]::before {
         border: white .25px solid;
         margin: 0 10px;
     }
-    /* Alert Styles */
-    #alert {
-        margin-top: 97.5px;
-        padding: 0 25px;
-    }
-    /* Content Styles  */
-    .main-content {
-        width: 95%;
-        margin: 12.5px auto;
-    }
-    .intro-container {
-        width: 92.5%;
-    }
 }
+
+
+/* Desktop and Laptop */
 
 @media (min-width: 1024px) {
     /*Nav Bar */
@@ -264,17 +223,5 @@ a[href^="mailto:l"]::before {
         animation-name: main-nav;
         animation-duration: 3s;
         animation-iteration-count: infinite;
-    }
-    /* Alert Styles */
-    #alert {
-        margin-top: 72px;
-    }
-    /* Content Styles */
-    .main-content {
-        width: 92.5%;
-        margin: 15px auto;
-    }
-    .intro-container {
-        width: 90%;
     }
 }

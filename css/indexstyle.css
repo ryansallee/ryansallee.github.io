@@ -1,0 +1,70 @@
+/* Base Styles */
+
+#spring-alert,
+.main-content {
+    flex: 1;
+}
+
+
+/* Message */
+
+#alert {
+    margin-top: 10px;
+    box-shadow: 5px 5px 5px rgb(104, 109, 109);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 10px;
+}
+
+
+/*---Main Content---*/
+
+.main-content {
+    background: white;
+    width: 97.5%;
+    margin: 10px auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgb(113, 119, 119);
+}
+
+.intro-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* Media Queries */
+
+
+/*-----Tablet------*/
+
+@media (min-width: 640px) {
+    /* Alert Styles */
+    #alert {
+        margin-top: 97.5px;
+        padding: 0 25px;
+    }
+    /* Content Styles  */
+    .main-content {
+        width: 95%;
+        margin: 12.5px auto;
+    }
+    .intro-container {
+        width: 92.5%;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Alert Styles */
+    #alert {
+        margin-top: 72px;
+    }
+    /* Content Styles */
+    .main-content {
+        width: 92.5%;
+        margin: 15px auto;
+    }
+    .intro-container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,20 @@
+/* Base Styles */
+
+.contactForm {
+    flex: 1;
+    width: 97.5%;
+    background: white;
+    margin: 10px auto;
+    border-radius: 25px;
+}
+
+form {
+    padding: 20px auto;
+    margin: auto;
+    width: 75%;
+}
+
+input:focus,
+textarea:focus {
+    background-color: rgba(255, 255, 0, 0.308);
+}

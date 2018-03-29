@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The Lawn Paynes website is a proposal page for a friend who is looking to expand his small lawn care and landscaping business by showing which services he provides, examples of his work using a slideshow, and a contact page to allow customers to reach out to him. 
+The Lawn Paynes website is a proposal page for a friend who is looking to expand his small lawn care and landscaping business by showing which services he provides, examples of his work using a slideshow, and a contact page to allow customers to reach out to him. The site can be viewed at [https://ryansallee.github.io](https://ryansallee.github.io/).
 
 ## JavaScript Functions
 

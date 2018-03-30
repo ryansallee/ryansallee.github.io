@@ -152,8 +152,11 @@ $submitButton.click(function(evt) {
 // This is the portion of the script to reset and hide all of the error messages if reset clicked. As well, the 
 // input field for name will receive focus. The mousedown method is used.
 $('input[type="reset"]').on("mousedown", function(evt) {
+    // Stop default behavior of the reset button.
     evt.preventDefault();
+    // Hide all of the $errorSpans
     $errorSpans.hide(function() {
+        // Bring focus back to the name field.
         $name.focus();
     })
 });

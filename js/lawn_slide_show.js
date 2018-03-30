@@ -73,7 +73,8 @@ showButtons();
 // Function to be called to manually move the slides with the parameter n to be supplied when the function is called
 // in the nextButton and previousButton click event handlers.
 function slideMove(n) {
-    // Advance the SlideNumber variable by parameter n when the slideMove function is called.
+    // Advance the SlideNumber variable by parameter n when the slideMove function is called by passing slideNumber +=n
+    // as an argument to slideShow.
     slideShow(slideNumber += n);
 };
 

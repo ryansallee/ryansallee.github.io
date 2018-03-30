@@ -14,7 +14,7 @@ function fadeInOnLoad() {
         // Set the opacity of the images in the .service-wrap div to 0 on page load as the script is right before the 
         // closing body tag.
         $('.service-wrap img').css("opacity", "0")
-            // Gradually increase the opacity of the images to 1 over 2 seconds
+            // Gradually increase the opacity of the images to 1 over 2 seconds.
             .animate({ "opacity": "1" }, 2000);
 
         // Set the opacity of the list items in the .service-wrap div to 0 on page load.

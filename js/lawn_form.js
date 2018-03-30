@@ -154,7 +154,7 @@ $submitButton.click(function(evt) {
 $('input[type="reset"]').on("mousedown", function(evt) {
     // Stop default behavior of the reset button.
     evt.preventDefault();
-    // Hide all of the $errorSpans
+    // Hide all of the $errorSpans.
     $errorSpans.hide(function() {
         // Bring focus back to the name field.
         $name.focus();

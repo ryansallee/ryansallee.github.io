@@ -97,7 +97,7 @@ nextButton.onclick = function() {
     // Call the stop() function to stop the show allow the user to manually control the slideshow without interference
     // from the automatic slideshow. After the nextButton or previousButton is clicked for the first time, stop() will
     // not execute since showPlaying = false, but the interval will have been cleared by the first click of the nextButton
-    // or previousButton while the slideshow is playing (either on page load or after a click on resumeButton)
+    // or previousButton while the slideshow is playing (either on page load or after a click on resumeButton).
     stop();
 };
 

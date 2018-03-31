@@ -35,12 +35,12 @@ function slideShow(n) {
             n = ++slideNumber;
         }
         // If n is greater than the index of the last element of  slides (length of an array -1)
-        // set the slideNumber to 0 so that the first image in slides can have its display set back to block
+        // set the slideNumber to 0 so that the first image in slides can have its display set back to block.
         if (n > slides.length - 1) {
             slideNumber = 0;
         }
         // If n is less than 0 (this would occur if the previousButton on click event occurs), set slideNumber
-        // to the index of the last element of slides (length of an array -1)
+        // to the index of the last element of slides (length of an array -1).
         if (n < 0) {
             slideNumber = slides.length - 1;
         }

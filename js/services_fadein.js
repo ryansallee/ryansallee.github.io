@@ -25,4 +25,4 @@ function fadeInOnLoad() {
             .animate({ "opacity": "1" }, 2000);
     }
 };
-// End of script
+// End of script.

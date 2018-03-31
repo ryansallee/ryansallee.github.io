@@ -133,4 +133,4 @@ function resume() {
         showPlaying = true;
     }
 };
-// End of of Script
+// End of of Script.

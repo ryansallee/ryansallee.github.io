@@ -38,4 +38,4 @@ function displayMessage() {
         div.style.background = "rgb(239, 52, 34)";
     }
 };
-// End of Script
+// End of Script.

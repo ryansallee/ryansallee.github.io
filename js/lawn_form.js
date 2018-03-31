@@ -11,11 +11,11 @@ var url = "https://cors-test.appspot.com/test";
 // we can still seralize the form to ensure that it is in a JSON format like a real request.
 var formData = $('form').serialize();
 
-// Declare form tag and button as a jQuery selector variable as it will be used multiple times
+// Declare form tag and button as a jQuery selector variable as it will be used multiple times.
 var $form = $('form');
 var $submitButton = $('input[type="button"]');
 
-// Declare all the spans except the .telephone span as a variable for the reset function
+// Declare all the spans except the .telephone span as a variable for the reset function.
 var $errorSpans = $(".alertEmail, .alertName, .alertPhone, .alertComment");
 
 // Declare variables for the validation of the email, name, phone, and comment fields.
@@ -28,7 +28,7 @@ var $comment = $('#comments');
 var emailFormat = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
 var phoneFormat = new RegExp(/^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/);
 
-// Declare an object variable for the styles for the Validation check Error Messages
+// Declare an object variable for the styles for the Validation check Error Messages.
 var errorStyle = {
     "color": "red",
     "font-size": "1.25em",
@@ -44,7 +44,7 @@ var doNotSubmitPhone = false;
 var doNotSubmitComments = false;
 
 
-// // The next 4 functions will validate the name, email, phone number, and comment fields
+// // The next 4 functions will validate the name, email, phone number, and comment fields.
 // // whenever a visitor attempts to submit the form. They will be called on the click even handler on the submit button.
 
 function nameValidate() {
@@ -142,7 +142,7 @@ $submitButton.click(function(evt) {
         error: function(xhr, ajaxOptions, thrownError) {
             // Declare the errorMessage variable.
             var errorMessage = "<p> Oh no! Something went wrong! Please try again.<p>";
-            // The errorMessage displays in the errorAlert span
+            // The errorMessage displays in the errorAlert span.
             $(".errorAlert").html(errorMessage).css(errorStyle);
         }
     })

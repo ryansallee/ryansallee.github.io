@@ -147,7 +147,7 @@ $submitButton.click(function(evt) {
         }
     })
 });
-// End of AJAX request code
+// End of AJAX request code.
 
 // This is the portion of the script to reset and hide all of the error messages if reset clicked. As well, the 
 // input field for name will receive focus. The mousedown method is used.

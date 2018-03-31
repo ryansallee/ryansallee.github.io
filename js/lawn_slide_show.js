@@ -22,7 +22,7 @@ var resumeButton = document.querySelector('#resume');
 var nextButton = document.querySelector('#next');
 var previousButton = document.querySelector('#previous');
 
-// Function to run the slideshow on window load (since the script is placed at the end of the HTML)
+// Function to run the slideshow on window load (since the script is placed at the end of the HTML).
 function slideShow(n) {
     // Function will only run if the user's viewPortWidth is greater than 640px.
     if (viewPortWidth >= targetWidth) {
@@ -74,11 +74,11 @@ showButtons();
 // in the nextButton and previousButton click event handlers.
 function slideMove(n) {
     // Advance the SlideNumber variable by parameter n when the slideMove function is called by passing slideNumber +=n
-    // as an argument to slideShow.
+    // as an argument to slideShow(n).
     slideShow(slideNumber += n);
 };
 
-// Function to stop the slideshow
+// Function to stop the slideshow.
 function stop() {
     // Only functions if the showPlaying variable is true.
     if (showPlaying) {
@@ -90,7 +90,7 @@ function stop() {
     }
 };
 
-// On click event handler for the nextButton
+// On click event handler for the nextButton.
 nextButton.onclick = function() {
     // Pass 1 as the value for the parameter to slideMove function to advance the slide by 1.
     slideMove(1);
@@ -101,7 +101,7 @@ nextButton.onclick = function() {
     stop();
 };
 
-// On click event handler for the previousButton
+// On click event handler for the previousButton.
 previousButton.onclick = function() {
     // Pass -1 as the value for the parameter to slideMove function to move the slide back 1 slide (advance slide -1).
     slideMove(-1);

@@ -57,7 +57,7 @@ function slideShow(n) {
 };
 
 // Function to set the control buttons display to inline-block so that they display if JS is enabled and the
-// viewport width dectected by Javascript is more than 640px.
+// viewport width dectected by Javascript is more than or equal to 640px for tablet-sized displays and larger.
 function showButtons() {
     if (viewPortWidth >= targetWidth) {
         pauseButton.style.display = "inline-block";

@@ -25,6 +25,7 @@ function displayMessage() {
     // Set Up Variables to Display Messages.
     var beforeSpringMessage = "<p><strong>Spring is coming! <a href='#telephone'> Call us</a> now to get your Lawn Paynes solved!<strong></p>";
     var beforeSummerMessage = "<p><strong>Spring is here! <a href='#telephone'> Call us</a> now before your Lawn Paynes are out of control!<strong></p>";
+    var afterSummerMessage = "<p><strong> Summer is here! <a href='#telephone'> Call us now! We can solve the worst of your Lawn paynes! <strong></p>";
     // Select the Alert Div to insert messages.
     var div = document.querySelector("#alert");
     // Test Condition to make sure it is before spring. If so, insert the beforeSpringMessage.
@@ -35,6 +36,9 @@ function displayMessage() {
         // Test Condition to see if it is after spring, but before summer. If so, insert the beforeSummerMessage.
     } else if (beginSummerDate > todayDate && todayDate > beginSpringDate) {
         div.innerHTML = beforeSummerMessage;
+        div.style.background = "rgb(239, 52, 34)";
+    } else if (beginSummerDate < todayDate) {
+        div.innerHTML = afterSummerMessage;
         div.style.background = "rgb(239, 52, 34)";
     }
 };
